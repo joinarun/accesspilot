@@ -1,0 +1,12 @@
+metrics_to_run:
+  - accesspilot_contract
+  - agent_turn_count
+
+custom_metrics:
+  - name: accesspilot_contract
+    custom_function_file: metrics.py
+  - name: agent_turn_count
+    custom_function: |
+      def evaluate(instance):
+          turns = (instance.get("agent_data") or {}).get("turns", [])
+          return {"score": len(turns), "explanation": "Number of recorded turns."}

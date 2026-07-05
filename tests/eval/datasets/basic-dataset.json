@@ -1,0 +1,46 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "scan_only_vulnerable_site",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"target\":\"http://127.0.0.1:8000/demo/original/\",\"routes\":[\"/demo/original/\"],\"wcag_level\":\"AA\",\"llm_provider\":\"gemini\",\"max_repair_rounds\":1}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Report deterministic accessibility findings without claiming source changes, a push, or a pull request."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "scan_only_accesspilot_ui",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"target\":\"http://127.0.0.1:8000/\",\"routes\":[\"/\"],\"wcag_level\":\"AA\",\"llm_provider\":\"gemini\",\"max_repair_rounds\":1}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Complete a scan-only report and clearly retain the no-source limitation."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

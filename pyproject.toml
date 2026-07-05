@@ -1,0 +1,120 @@
+[project]
+name = "accesspilot"
+version = "0.1.0"
+description = "Autonomous accessibility auditing and repair workflow built on Google ADK 2"
+authors = [
+    {name = "AccessPilot contributors"},
+]
+
+dependencies = [
+    "google-adk[gcp]>=2.3.0,<3.0.0",
+    "a2a-sdk[http-server]~=0.3.22",
+    "aiohttp>=3.13.4",
+    "beautifulsoup4>=4.13.0,<5.0.0",
+    "fastapi>=0.116.0,<1.0.0",
+    "opentelemetry-instrumentation-google-genai>=0.1.0,<1.0.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+    "gcsfs>=2024.11.0",
+    "google-cloud-logging>=3.12.0,<4.0.0",
+    "httpx>=0.28.0,<1.0.0",
+    "litellm>=1.82.9,<2.0.0",
+    "pydantic-settings>=2.10.0,<3.0.0",
+    "pyyaml>=6.0.2,<7.0.0",
+    "requests>=2.32.0,<3.0.0",
+    "uvicorn[standard]>=0.35.0,<1.0.0",
+]
+requires-python = ">=3.11,<3.14"
+
+[project.scripts]
+accesspilot-install-scanner = "app.cli:install_scanner"
+
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2,<10.0.0",
+    "pytest-asyncio>=1.0.0,<2.0.0",
+    "pytest-cov>=6.2.0,<8.0.0",
+    "nest-asyncio>=1.6.0,<2.0.0",
+]
+
+[project.optional-dependencies]
+eval = [
+    "google-adk[eval]>=2.0.0,<3.0.0",
+    "google-cloud-aiplatform[evaluation]>=1.156.0",
+]
+lint = [
+    "ruff>=0.4.6,<1.0.0",
+    "ty>=0.0.1a0",
+    "codespell>=2.2.0,<3.0.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "C",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "UP", # pyupgrade
+    "RUF", # ruff specific rules
+]
+ignore = ["E501", "C901", "B006"] # ignore line too long, too complex
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "frontend"]
+
+[tool.ty]
+# ty is Astral's Rust-based type checker (same team as ruff/uv)
+# See: https://docs.astral.sh/ty/
+
+[tool.ty.environment]
+python-version = "3.11"
+
+[tool.ty.src]
+exclude = [".venv/**"]
+
+[tool.ty.rules]
+# Ignore common issues with third-party libraries and dynamic code patterns
+unresolved-import = "ignore"
+unresolved-attribute = "ignore"
+invalid-argument-type = "ignore"
+invalid-assignment = "ignore"
+invalid-return-type = "ignore"
+possibly-missing-attribute = "ignore"
+not-subscriptable = "ignore"
+deprecated = "ignore"
+
+[tool.codespell]
+ignore-words-list = "rouge"
+skip = "./locust_env,uv.lock,.venv,./frontend,./scanner/node_modules,./artifacts,./.accesspilot,**/package-lock.json"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.pytest.ini_options]
+pythonpath = "."
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"scanner/src" = "scanner/src"
+"scanner/package.json" = "scanner/package.json"
+"scanner/package-lock.json" = "scanner/package-lock.json"
+"examples/vulnerable-app" = "examples/vulnerable-app"
+"frontend/dist" = "frontend/dist"
+
+[tool.hatch.build.targets.sdist.force-include]
+"frontend/dist" = "frontend/dist"
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"

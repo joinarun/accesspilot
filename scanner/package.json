@@ -1,0 +1,20 @@
+{
+  "name": "@accesspilot/scanner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic Playwright and axe-core accessibility scanner for AccessPilot.",
+  "type": "module",
+  "bin": {
+    "accesspilot-scan": "./src/scan.mjs"
+  },
+  "scripts": {
+    "scan": "node ./src/scan.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "playwright": "1.61.1"
+  }
+}

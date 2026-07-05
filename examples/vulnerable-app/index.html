@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Northstar Account Portal</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="site-header">
+      <a class="brand" href="#">Northstar</a>
+      <div class="nav">
+        <a href="#features">Features</a>
+        <a href="#signup">Create account</a>
+      </div>
+    </div>
+
+    <div class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">A deliberately vulnerable demo</p>
+          <h1>Ship your next project faster</h1>
+          <p class="muted-copy">
+            Coordinate your team, track milestones, and keep every launch on
+            schedule from one lightweight workspace.
+          </p>
+          <div class="primary-action" id="start-action">Start a project</div>
+        </div>
+        <img class="hero-image" src="./workspace.svg">
+      </section>
+
+      <section class="features" id="features">
+        <h3>Everything your team needs</h3>
+        <div class="feature-grid">
+          <article>
+            <h4>Simple planning</h4>
+            <p>Turn an idea into a clear, shared plan in a few minutes.</p>
+          </article>
+          <article>
+            <h4>Fast feedback</h4>
+            <p>Keep decisions close to the work and unblock teammates.</p>
+          </article>
+          <article>
+            <h4>Clear ownership</h4>
+            <p>Make every task, deadline, and handoff easy to understand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="signup-card" id="signup">
+        <h2>Create your account</h2>
+        <p>Try the workspace with your team. No credit card required.</p>
+        <form id="signup-form" novalidate>
+          <div class="field-row">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Work email address"
+              autocomplete="email"
+            >
+            <button type="submit">Continue</button>
+          </div>
+          <div class="error-message" id="form-error"></div>
+        </form>
+      </section>
+    </div>
+
+    <div class="toast" id="toast">Project setup started.</div>
+    <script src="./app.js"></script>
+  </body>
+</html>
