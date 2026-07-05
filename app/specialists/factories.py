@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import logging
+from typing import Any
+
 from google.adk.agents import LlmAgent
 from google.adk.models.base_llm import BaseLlm
 
@@ -13,6 +16,8 @@ from .schemas import (
     RepairerOutput,
     VerifierOutput,
 )
+
+logger = logging.getLogger("accesspilot.ai")
 
 _COMMON_SAFETY = """
 Ground every conclusion in the supplied scan, DOM, source, diff, or test evidence.
@@ -75,6 +80,11 @@ conflicting work. Prefer native semantics over ARIA, preserve established projec
 conventions, order dependencies explicitly, and include focused tests. Mark risky
 or subjective changes for human review. Stop rather than plan edits when source
 evidence or safe ownership boundaries are missing.
+
+Use stop_reason only for a complete stop: when it is non-empty, change_groups and
+execution_order must both be empty. If some issues are safely repairable and others
+are not, return the safe change_groups, put only the unsupported issues in
+unresolved_issue_ids, and leave stop_reason empty.
 """,
     )
 
@@ -155,6 +165,48 @@ def _create_specialist(
     output_schema: type,
     role_instruction: str,
 ) -> LlmAgent:
+    provider, model_name = _model_identity(model)
+
+    async def before_model_callback(callback_context, llm_request):
+        del llm_request
+        logger.info(
+            "event=ai_model_request run_id=%s provider=%s model=%s "
+            "specialist=%s invocation_id=%s",
+            _accesspilot_run_id(callback_context),
+            provider,
+            model_name,
+            name,
+            callback_context.invocation_id,
+        )
+        return None
+
+    async def after_model_callback(callback_context, llm_response):
+        actual_model = llm_response.model_version or model_name
+        logger.info(
+            "event=ai_model_response run_id=%s provider=%s model=%s "
+            "specialist=%s invocation_id=%s",
+            _accesspilot_run_id(callback_context),
+            provider,
+            actual_model,
+            name,
+            callback_context.invocation_id,
+        )
+        return None
+
+    async def on_model_error_callback(callback_context, llm_request, error):
+        del llm_request
+        logger.error(
+            "event=ai_model_error run_id=%s provider=%s model=%s "
+            "specialist=%s invocation_id=%s error_type=%s",
+            _accesspilot_run_id(callback_context),
+            provider,
+            model_name,
+            name,
+            callback_context.invocation_id,
+            type(error).__name__,
+        )
+        return None
+
     return LlmAgent(
         name=name,
         description=description,
@@ -165,7 +217,28 @@ def _create_specialist(
         tools=[],
         disallow_transfer_to_parent=True,
         disallow_transfer_to_peers=True,
+        before_model_callback=before_model_callback,
+        after_model_callback=after_model_callback,
+        on_model_error_callback=on_model_error_callback,
     )
+
+
+def _model_identity(model: BaseLlm | str) -> tuple[str, str]:
+    raw_model = model if isinstance(model, str) else getattr(model, "model", "unknown")
+    model_name = str(raw_model)
+    if model_name.startswith("openai/"):
+        return "openai", model_name.removeprefix("openai/")
+    if "gemini" in model_name.lower():
+        return "gemini", model_name
+    return "unknown", model_name
+
+
+def _accesspilot_run_id(callback_context: Any) -> str:
+    workflow_state = callback_context.state.get("workflow_state")
+    if isinstance(workflow_state, dict) and workflow_state.get("run_id"):
+        return str(workflow_state["run_id"])
+    session_id = getattr(callback_context.session, "id", None)
+    return str(session_id or callback_context.run_id or "unknown")
 
 
 __all__ = [

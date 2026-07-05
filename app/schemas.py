@@ -38,6 +38,7 @@ class FrameworkKind(StrEnum):
 
 
 class LlmProviderName(StrEnum):
+    DETERMINISTIC = "deterministic"
     GEMINI = "gemini"
     OPENAI = "openai"
 
@@ -426,6 +427,7 @@ class RunSnapshot(BaseModel):
 
 class ProviderAvailability(BaseModel):
     name: LlmProviderName
+    label: str
     configured: bool
     model: str
     detail: str

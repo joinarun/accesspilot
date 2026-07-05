@@ -1,7 +1,14 @@
 import { useId, useMemo, useState } from "react";
 
 import type { Issue, IssueStatus, RunView, Severity } from "../types";
-import { AlertIcon, CheckIcon, ExternalLinkIcon, FileCodeIcon, SparkIcon } from "./Icons";
+import {
+  AlertIcon,
+  CheckIcon,
+  ChevronIcon,
+  ExternalLinkIcon,
+  FileCodeIcon,
+  SparkIcon,
+} from "./Icons";
 
 const severityOrder: Severity[] = ["critical", "serious", "moderate", "minor", "unknown"];
 const issueStatuses: IssueStatus[] = ["open", "planned", "fixed", "unresolved", "regression"];
@@ -83,59 +90,74 @@ interface IssueCardProps {
 function IssueCard({ issue }: IssueCardProps) {
   const screenshotUrl = safeUrl(issue.screenshotUrl);
   return (
-    <article className={`issue-card severity-${issue.severity}`}>
-      <div className="issue-card-head">
-        <span className="severity-badge">
-          <span aria-hidden="true" /> {pretty(issue.severity)}
+    <details className={`issue-card severity-${issue.severity}`}>
+      <summary className="issue-summary">
+        <span className="issue-summary-main">
+          <span className="issue-card-head">
+            <span className="severity-badge">
+              <span aria-hidden="true" /> {pretty(issue.severity)}
+            </span>
+            <span className={`issue-status-badge status-${issue.status}`}>
+              {issue.status === "fixed" ? <CheckIcon /> : null}
+              {issue.status === "planned" ? <SparkIcon /> : null}
+              {["unresolved", "regression"].includes(issue.status) ? <AlertIcon /> : null}
+              {pretty(issue.status)}
+            </span>
+          </span>
+          <span className="issue-title">{issue.title}</span>
+          <span className="issue-summary-context">
+            <span><strong>Route</strong> <code>{issue.route}</code></span>
+            <span><strong>Selector</strong> <code>{issue.selector}</code></span>
+          </span>
         </span>
-        <span className={`issue-status-badge status-${issue.status}`}>
-          {issue.status === "fixed" ? <CheckIcon /> : null}
-          {issue.status === "planned" ? <SparkIcon /> : null}
-          {["unresolved", "regression"].includes(issue.status) ? <AlertIcon /> : null}
-          {pretty(issue.status)}
+        <span className="issue-summary-action" aria-hidden="true">
+          <span>Details</span>
+          <ChevronIcon />
         </span>
+      </summary>
+
+      <div className="issue-card-body">
+        <p className="issue-explanation">{issue.explanation}</p>
+
+        <dl className="issue-meta">
+          <div>
+            <dt>Route</dt>
+            <dd><code>{issue.route}</code></dd>
+          </div>
+          <div>
+            <dt>Selector</dt>
+            <dd><code>{issue.selector}</code></dd>
+          </div>
+          <div>
+            <dt>Confidence</dt>
+            <dd>{percent(issue.confidence)}</dd>
+          </div>
+        </dl>
+
+        {issue.wcag.length > 0 ? (
+          <div className="tag-list" aria-label="WCAG references">
+            {issue.wcag.slice(0, 6).map((tag) => <span key={tag}>{tag}</span>)}
+          </div>
+        ) : null}
+
+        <div className="fix-guidance">
+          <SparkIcon />
+          <p><strong>Suggested strategy</strong>{issue.suggestedFix}</p>
+        </div>
+
+        {issue.evidence || screenshotUrl ? (
+          <details className="evidence-details">
+            <summary>Inspect evidence</summary>
+            {issue.evidence ? <pre><code>{issue.evidence}</code></pre> : null}
+            {screenshotUrl ? (
+              <a href={screenshotUrl} target="_blank" rel="noreferrer">
+                Open captured screenshot <ExternalLinkIcon />
+              </a>
+            ) : null}
+          </details>
+        ) : null}
       </div>
-      <h3>{issue.title}</h3>
-      <p className="issue-explanation">{issue.explanation}</p>
-
-      <dl className="issue-meta">
-        <div>
-          <dt>Route</dt>
-          <dd><code>{issue.route}</code></dd>
-        </div>
-        <div>
-          <dt>Selector</dt>
-          <dd><code>{issue.selector}</code></dd>
-        </div>
-        <div>
-          <dt>Confidence</dt>
-          <dd>{percent(issue.confidence)}</dd>
-        </div>
-      </dl>
-
-      {issue.wcag.length > 0 ? (
-        <div className="tag-list" aria-label="WCAG references">
-          {issue.wcag.slice(0, 6).map((tag) => <span key={tag}>{tag}</span>)}
-        </div>
-      ) : null}
-
-      <div className="fix-guidance">
-        <SparkIcon />
-        <p><strong>Suggested strategy</strong>{issue.suggestedFix}</p>
-      </div>
-
-      {issue.evidence || screenshotUrl ? (
-        <details className="evidence-details">
-          <summary>Inspect evidence</summary>
-          {issue.evidence ? <pre><code>{issue.evidence}</code></pre> : null}
-          {screenshotUrl ? (
-            <a href={screenshotUrl} target="_blank" rel="noreferrer">
-              Open captured screenshot <ExternalLinkIcon />
-            </a>
-          ) : null}
-        </details>
-      ) : null}
-    </article>
+    </details>
   );
 }
 

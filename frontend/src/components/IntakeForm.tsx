@@ -2,6 +2,7 @@ import { useEffect, useId, useState, type FormEvent } from "react";
 
 import type { AppConfig, RunRequest } from "../types";
 import { ArrowRightIcon, ShieldCheckIcon } from "./Icons";
+import { Tooltip } from "./Tooltip";
 
 interface IntakeFormProps {
   config: AppConfig;
@@ -45,6 +46,18 @@ export function IntakeForm({
     executePullRequest: false,
   });
   const [error, setError] = useState("");
+  const scanDepthOptions = Array.from(
+    { length: config.maxScanDepth + 1 },
+    (_, depth) => ({
+      value: depth,
+      label:
+        depth === 0
+          ? "0 — Listed routes only"
+          : depth === 1
+            ? "1 — Follow direct links"
+            : `${depth} — Follow links ${depth} levels deep`,
+    }),
+  );
 
   useEffect(() => {
     setForm((current) => ({
@@ -111,8 +124,7 @@ export function IntakeForm({
 
   return (
     <section className="intake-card" aria-labelledby={`${formId}-title`}>
-      <div className="section-kicker">
-        <span>New assessment</span>
+      <div className="intake-meta">
         <span className="safe-chip">
           <ShieldCheckIcon /> {form.executePullRequest ? "Remote publication requested" : "Local changes only"}
         </span>
@@ -125,7 +137,12 @@ export function IntakeForm({
 
       <form onSubmit={submit} noValidate>
         <div className="field field-wide">
-          <label htmlFor={`${formId}-target`}>Website or repository</label>
+          <div className="field-label">
+            <label htmlFor={`${formId}-target`}>Website or Code Repo</label>
+            <Tooltip label="Website or Code Repo">
+              If there is no source code access, only scan and issue detection will be performed.
+            </Tooltip>
+          </div>
           <input
             id={`${formId}-target`}
             name="target"
@@ -139,7 +156,7 @@ export function IntakeForm({
             disabled={disabled}
           />
           <span id={`${formId}-target-hint`} className="field-hint">
-            AccessPilot detects URL, repository, and local path targets automatically.
+            Enter a public website URL, GitHub repository, or permitted local project path.
           </span>
           <button
             className="sample-target-button"
@@ -155,13 +172,18 @@ export function IntakeForm({
             }
             disabled={disabled}
           >
-            Use bundled vulnerable app
+            Sample app with accessibility issue
           </button>
         </div>
 
         <div className="form-grid">
           <div className="field">
-            <label htmlFor={`${formId}-provider`}>Reasoning provider</label>
+            <div className="field-label">
+              <label htmlFor={`${formId}-provider`}>Reasoning provider</label>
+              <Tooltip label="Reasoning provider">
+                Deterministic mode uses local rules. Gemini and OpenAI add AI-assisted investigation and repair planning.
+              </Tooltip>
+            </div>
             <div className="select-wrap">
               <select
                 id={`${formId}-provider`}
@@ -197,7 +219,12 @@ export function IntakeForm({
           </div>
 
           <div className="field">
-            <label htmlFor={`${formId}-branch`}>Working branch</label>
+            <div className="field-label">
+              <label htmlFor={`${formId}-branch`}>Path to create local copy</label>
+              <Tooltip label="Path to create local copy">
+                Names the isolated working branch used for proposed changes. Your original source is not edited in place.
+              </Tooltip>
+            </div>
             <input
               id={`${formId}-branch`}
               type="text"
@@ -209,30 +236,40 @@ export function IntakeForm({
           </div>
 
           <div className="field">
-            <label htmlFor={`${formId}-depth`}>Scan depth</label>
-            <input
-              id={`${formId}-depth`}
-              type="number"
-              min={0}
-              max={config.maxScanDepth}
-              value={form.scanDepth}
-              onChange={(event) =>
-                update(
-                  "scanDepth",
-                  Math.max(0, Math.min(config.maxScanDepth, Number(event.target.value))),
-                )
-              }
-              disabled={disabled}
-              aria-describedby={`${formId}-depth-hint`}
-            />
+            <div className="field-label">
+              <label htmlFor={`${formId}-depth`}>Scan depth</label>
+              <Tooltip label="Scan depth">
+                0 means only explicitly listed routes are scanned. 1 follows links from the starting page. 2 follows links found one level further. Higher values continue same-origin discovery to that many levels.
+              </Tooltip>
+            </div>
+            <div className="select-wrap">
+              <select
+                id={`${formId}-depth`}
+                value={form.scanDepth}
+                onChange={(event) => update("scanDepth", Number(event.target.value))}
+                disabled={disabled}
+                aria-describedby={`${formId}-depth-hint`}
+              >
+                {scanDepthOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
             <span id={`${formId}-depth-hint`} className="field-hint">
-              Maximum same-origin navigation levels.
+              Maximum same-origin link levels for managed local apps; explicit routes are always included.
             </span>
           </div>
         </div>
 
         <div className="field field-wide">
-          <label htmlFor={`${formId}-routes`}>Routes to scan</label>
+          <div className="field-label">
+            <label htmlFor={`${formId}-routes`}>Routes to scan</label>
+            <Tooltip label="Routes to scan">
+              Add same-origin paths such as /, /login, or /checkout. Enter one path per line or separate them with commas.
+            </Tooltip>
+          </div>
           <textarea
             id={`${formId}-routes`}
             rows={3}
@@ -252,7 +289,12 @@ export function IntakeForm({
           <summary>Runtime and authentication options <span>Optional</span></summary>
           <div className="advanced-grid">
             <div className="field advanced-wide">
-              <label htmlFor={`${formId}-app-url`}>Running application URL</label>
+              <div className="field-label">
+                <label htmlFor={`${formId}-app-url`}>Running application URL</label>
+                <Tooltip label="Running application URL">
+                  Use this when the repository is already deployed. Leave it empty to start an enabled local copy instead.
+                </Tooltip>
+              </div>
               <input
                 id={`${formId}-app-url`}
                 type="url"

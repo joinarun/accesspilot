@@ -135,6 +135,19 @@ def test_runtime_capabilities_are_reported_and_server_gated(server: str) -> None
     config = httpx.get(f"{server}/api/config", timeout=10).json()
     assert config["local_execution_enabled"] is False
     assert config["dependency_install_enabled"] is False
+    assert config["default_provider"] == "deterministic"
+    assert config["providers"][0] == {
+        "name": "deterministic",
+        "label": "Deterministic (no LLM)",
+        "configured": True,
+        "model": "None",
+        "detail": "Use typed local specialists without making an LLM request.",
+    }
+    assert next(
+        provider["label"]
+        for provider in config["providers"]
+        if provider["name"] == "openai"
+    ) == "OpenAI"
 
     local_execution = httpx.post(
         f"{server}/api/runs",
@@ -155,6 +168,26 @@ def test_runtime_capabilities_are_reported_and_server_gated(server: str) -> None
 
     assert local_execution.status_code == 403
     assert dependency_install.status_code == 403
+
+
+def test_explicit_deterministic_run_uses_no_llm_provider(server: str) -> None:
+    response = httpx.post(
+        f"{server}/api/runs",
+        json={
+            "target": "sample://vulnerable-app",
+            "demo_mode": True,
+            "routes": ["/"],
+            "llm_provider": "deterministic",
+            "max_repair_rounds": 1,
+        },
+        timeout=10,
+    )
+
+    assert response.status_code == 202
+    run_id = response.json()["run_id"]
+    state = _wait_for(server, run_id, {"waiting_for_approval", "failed"})["state"]
+    assert state["error"] is None
+    assert state["verification"]["passed"] is True
 
 
 def test_revision_cannot_bypass_repair_round_limit(server: str) -> None:

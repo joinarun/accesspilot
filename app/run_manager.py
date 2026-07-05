@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import logging
 import os
 import uuid
 from dataclasses import dataclass, field
@@ -18,6 +19,7 @@ from app.providers import LLMConfig, LLMProvider
 from app.schemas import (
     AccessPilotRequest,
     ApprovalRequest,
+    LlmProviderName,
     RunAccepted,
     RunEvent,
     RunSnapshot,
@@ -28,6 +30,8 @@ from app.schemas import (
 )
 from app.services.safety import redact_text, validate_editable_path
 from app.workflow import build_accesspilot_workflow
+
+logger = logging.getLogger("accesspilot.ai")
 
 
 @dataclass
@@ -50,9 +54,43 @@ class RunManager:
 
     async def create(self, request: AccessPilotRequest) -> RunAccepted:
         run_id = uuid.uuid4().hex
-        deterministic = not _provider_configured(request)
-        llm_config = LLMConfig.from_env().model_copy(
-            update={"provider": LLMProvider(request.llm_provider.value)}
+        explicitly_deterministic = request.llm_provider is LlmProviderName.DETERMINISTIC
+        forced_deterministic = _truthy(
+            os.getenv("ACCESSPILOT_DETERMINISTIC_SPECIALISTS")
+        )
+        provider_configured = (
+            False if explicitly_deterministic else _provider_configured(request)
+        )
+        deterministic = (
+            explicitly_deterministic or forced_deterministic or not provider_configured
+        )
+        llm_config = LLMConfig.from_env()
+        if explicitly_deterministic:
+            provider_name = LlmProviderName.DETERMINISTIC.value
+            model_name = "none"
+            specialist_mode = "deterministic"
+        else:
+            llm_config = llm_config.model_copy(
+                update={"provider": LLMProvider(request.llm_provider.value)}
+            )
+            provider_name = llm_config.provider.value
+            model_name = (
+                llm_config.openai.model
+                if llm_config.provider is LLMProvider.OPENAI
+                else llm_config.gemini.model
+            ).removeprefix("openai/")
+            if forced_deterministic:
+                specialist_mode = "deterministic_forced"
+            elif not provider_configured:
+                specialist_mode = "deterministic_fallback"
+            else:
+                specialist_mode = "llm"
+        logger.info(
+            "event=ai_run_routing run_id=%s provider=%s model=%s mode=%s",
+            run_id,
+            provider_name,
+            model_name,
+            specialist_mode,
         )
         workflow = build_accesspilot_workflow(
             llm_config=llm_config,
@@ -72,14 +110,35 @@ class RunManager:
             request=request,
             status=RunStatus.QUEUED,
         )
+        initial.messages.append(
+            WorkflowMessage(
+                level="info",
+                stage="intake",
+                text=(
+                    "AI routing: "
+                    f"provider={provider_name}, "
+                    f"model={model_name}, mode={specialist_mode}."
+                ),
+            )
+        )
         if deterministic:
             initial.messages.append(
                 WorkflowMessage(
                     level="warning",
                     stage="intake",
                     text=(
-                        f"{request.llm_provider.value} credentials are not configured; "
-                        "the typed deterministic specialist fallback will be used."
+                        "Deterministic specialists were selected for this run."
+                        if explicitly_deterministic
+                        else (
+                            "Deterministic specialists were explicitly forced by server "
+                            "configuration."
+                            if forced_deterministic
+                            else (
+                                f"{request.llm_provider.value} credentials are not "
+                                "configured; the typed deterministic specialist fallback "
+                                "will be used."
+                            )
+                        )
                     ),
                 )
             )
@@ -250,6 +309,10 @@ def _provider_configured(request: AccessPilotRequest) -> bool:
     }
     project = os.getenv("GOOGLE_CLOUD_PROJECT", "").strip()
     return vertex and _real_configuration_value(project)
+
+
+def _truthy(value: str | None) -> bool:
+    return bool(value and value.strip().lower() in {"1", "true", "yes", "on"})
 
 
 def _real_configuration_value(value: str) -> bool:

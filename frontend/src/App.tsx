@@ -30,8 +30,9 @@ import type { RunView } from "./types";
 
 const fallbackConfig: AppConfig = {
   providers: [
+    { value: "deterministic", label: "Deterministic (no LLM)" },
     { value: "gemini", label: "Gemini" },
-    { value: "openai", label: "OpenAI via LLMproxy" },
+    { value: "openai", label: "OpenAI" },
   ],
   wcagLevels: [
     { value: "A", label: "WCAG 2.2 Level A" },
@@ -251,7 +252,7 @@ export function App() {
         <a className="brand" href="#main-content" aria-label="AccessPilot home">
           <span className="brand-mark"><RadarIcon /></span>
           <span className="brand-name">AccessPilot</span>
-          <span className="brand-tag">A11y repair agent</span>
+          <span className="brand-tag">Autonomous Accessibility Repair Agent</span>
         </a>
         <div className="header-meta" role="status" aria-label="Application status">
           <span
@@ -273,21 +274,26 @@ export function App() {
       <main id="main-content">
         <section className="hero" aria-labelledby="page-title">
           <div className="hero-copy">
-            <p className="eyebrow"><span>Autonomous accessibility repair</span></p>
-            <h1 id="page-title">
-              Find the barrier.
-              <span>Fix the source.</span>
-            </h1>
+            <p className="eyebrow"><span>AccessPilot workspace</span></p>
+            <h1 id="page-title">Autonomous Accessibility Repair Agent</h1>
             <p className="hero-summary">
-              AccessPilot turns rendered-page evidence into minimal source repairs,
-              verifies the outcome, and keeps every remote action behind your review.
+              Scan rendered experiences, trace barriers to source, and review verified
+              accessibility repairs before anything is published.
             </p>
           </div>
           <div className="hero-proof" role="list" aria-label="AccessPilot guardrails">
-            <span role="listitem"><CheckIcon /> Deterministic scans</span>
-            <span role="listitem"><CheckIcon /> Isolated edits</span>
-            <span role="listitem"><CheckIcon /> Human-approved PRs</span>
+            <span role="listitem"><CheckIcon /> Deterministic evidence</span>
+            <span role="listitem"><CheckIcon /> Isolated source edits</span>
+            <span role="listitem"><CheckIcon /> Human-approved changes</span>
           </div>
+          <figure className="hero-banner">
+            <img
+              src="/banner_image.png"
+              width="1006"
+              height="562"
+              alt="AccessPilot workflow showing an inaccessible web page scanned, repaired, verified, and prepared as a pull request."
+            />
+          </figure>
         </section>
 
         <div className="launch-grid">
