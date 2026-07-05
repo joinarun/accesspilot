@@ -430,6 +430,8 @@ def _repair_css(source: str, rules: set[str]) -> str:
             "#b8bec8": "#475467",
             "#8f96a3": "#475467",
             "#a0a7b2": "#475467",
+            "#c7cbd4": "#475467",
+            "#c4b5fd": "#6941c6",
         }
         for before, after in replacements.items():
             value = re.sub(re.escape(before), after, value, flags=re.I)

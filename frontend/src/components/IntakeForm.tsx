@@ -34,7 +34,7 @@ export function IntakeForm({
   const formId = useId();
   const [form, setForm] = useState<FormState>({
     target: "",
-    branch: "accesspilot/a11y-repairs",
+    branch: "accesspilot/localCopy-repairs",
     provider: config.defaultProvider,
     wcagLevel: config.defaultWcagLevel,
     routes: "/",
@@ -58,6 +58,12 @@ export function IntakeForm({
             : `${depth} — Follow links ${depth} levels deep`,
     }),
   );
+  const routePreview =
+    form.routes
+      .split(/[\n,]/)
+      .map((route) => route.trim())
+      .filter(Boolean)
+      .join(", ") || "No routes entered";
 
   useEffect(() => {
     setForm((current) => ({
@@ -230,7 +236,7 @@ export function IntakeForm({
               type="text"
               value={form.branch}
               onChange={(event) => update("branch", event.target.value)}
-              placeholder="accesspilot/a11y-repairs"
+              placeholder="accesspilot/localCopy-repairs"
               disabled={disabled}
             />
           </div>
@@ -263,27 +269,41 @@ export function IntakeForm({
           </div>
         </div>
 
-        <div className="field field-wide">
-          <div className="field-label">
-            <label htmlFor={`${formId}-routes`}>Routes to scan</label>
-            <Tooltip label="Routes to scan">
-              Add same-origin paths such as /, /login, or /checkout. Enter one path per line or separate them with commas.
-            </Tooltip>
+        <details className="routes-field field-wide">
+          <summary
+            onKeyDown={(event) => {
+              if (event.key !== "Enter" && event.key !== " ") return;
+              event.preventDefault();
+              const details = event.currentTarget.parentElement;
+              if (details instanceof HTMLDetailsElement) details.open = !details.open;
+            }}
+          >
+            <span className="routes-summary-label">Routes to scan</span>
+            <code title={routePreview}>{routePreview}</code>
+            <span className="routes-summary-chevron" aria-hidden="true" />
+          </summary>
+          <div className="field routes-field-body">
+            <div className="field-label">
+              <label htmlFor={`${formId}-routes`}>Route paths</label>
+              <Tooltip label="Routes to scan">
+                Add same-origin paths such as /, /login, or /checkout. Enter one path per line or separate them with commas.
+              </Tooltip>
+            </div>
+            <textarea
+              id={`${formId}-routes`}
+              rows={3}
+              value={form.routes}
+              onChange={(event) => update("routes", event.target.value)}
+              placeholder={'/\n/account\n/checkout'}
+              disabled={disabled}
+              aria-describedby={`${formId}-routes-hint`}
+            />
+            <span id={`${formId}-routes-hint`} className="field-hint">
+              One path per line or comma separated. Network crawling is limited to
+              the bundled demo and AccessPilot-managed local apps.
+            </span>
           </div>
-          <textarea
-            id={`${formId}-routes`}
-            rows={3}
-            value={form.routes}
-            onChange={(event) => update("routes", event.target.value)}
-            placeholder={'/\n/account\n/checkout'}
-            disabled={disabled}
-            aria-describedby={`${formId}-routes-hint`}
-          />
-          <span id={`${formId}-routes-hint`} className="field-hint">
-            One path per line or comma separated. Network crawling is limited to
-            the bundled demo and AccessPilot-managed local apps.
-          </span>
-        </div>
+        </details>
 
         <details className="advanced-fields">
           <summary>Runtime and authentication options <span>Optional</span></summary>

@@ -93,12 +93,26 @@ def test_sample_scan_repair_verify_and_reject_gate(server: str) -> None:
     assert state["verification"]["fixed_issue_count"] == len(state["issues"])
     assert state["verification"]["remaining_issue_count"] == 0
     assert state["verification"]["current_issue_count"] == 0
+    baseline_rules = [issue["rule_id"] for issue in state["issues"]]
+    assert baseline_rules.count("label") >= 2
+    assert baseline_rules.count("color-contrast") >= 8
     assert len(state["pages"]) == 1
     assert {change["path"] for change in state["changes"]} == {
         "index.html",
         "styles.css",
     }
     assert state["pull_request_url"] is None
+    original_screenshot = state["preview"]["original_screenshot"]
+    fixed_screenshot = state["preview"]["fixed_screenshot"]
+    assert original_screenshot
+    assert fixed_screenshot
+    original_image = httpx.get(f"{server}{original_screenshot}", timeout=10)
+    fixed_image = httpx.get(f"{server}{fixed_screenshot}", timeout=10)
+    assert original_image.status_code == 200
+    assert fixed_image.status_code == 200
+    assert original_image.headers["content-type"].startswith("image/png")
+    assert fixed_image.headers["content-type"].startswith("image/png")
+    assert original_image.content != fixed_image.content
 
     rejected = httpx.post(
         f"{server}/api/runs/{run_id}/approval",

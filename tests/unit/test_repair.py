@@ -38,6 +38,8 @@ def test_repair_engine_applies_semantic_fixture_fixes(tmp_path: Path) -> None:
     issues = [
         _issue("html-has-lang", "lang", "html"),
         _issue("image-alt", "image", "img.hero-image"),
+        _issue("label", "project-label", "#project-name"),
+        _issue("label", "email-label", "#email"),
         _issue("heading-order", "heading", ".features h3"),
         _issue("non-semantic-interactive", "control", "#start-action"),
         _issue("accessible-error-message", "error", "#form-error"),
@@ -70,12 +72,20 @@ def test_repair_engine_applies_semantic_fixture_fixes(tmp_path: Path) -> None:
     soup = BeautifulSoup((workspace / "index.html").read_text(), "html.parser")
     assert soup.html["lang"] == "en"
     assert soup.select_one("img.hero-image")["alt"] == "Workspace"
+    labels = {
+        label["for"]: label.get_text(strip=True)
+        for label in soup.select("label.accesspilot-label")
+    }
+    assert labels == {"project-name": "Project name", "email": "Email"}
     assert soup.select_one("#start-action").name == "button"
     assert soup.main is not None
     assert soup.select_one("#form-error")["role"] == "alert"
     css = (workspace / "styles.css").read_text()
     assert "outline: none" not in css
     assert "#475467" in css
+    assert "#6941c6" in css
+    assert "#c7cbd4" not in css
+    assert "#c4b5fd" not in css
 
 
 def test_repair_engine_handles_tsx_and_plan_bound_agent_patch(tmp_path: Path) -> None:

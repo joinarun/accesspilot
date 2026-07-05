@@ -21,10 +21,12 @@ node ../../scanner/src/scan.mjs --allow-private-network \
 
 - The document has no `lang` attribute.
 - The hero image has no text alternative.
-- The email input has no programmatic label.
+- The hero project-name input and signup email input have no visible or
+  programmatic labels.
 - Heading levels skip from `h1` to `h3`, then use `h4` headings.
 - “Start a project” is a clickable `div` with no keyboard semantics.
-- Muted body copy has insufficient foreground/background contrast.
+- Navigation links, the hero eyebrow, primary actions, and muted body copy have
+  insufficient foreground/background contrast.
 - Global CSS suppresses visible focus outlines.
 - Form errors are inserted visually without `aria-live`, `role="alert"`, an
   input description, focus management, or invalid-state metadata.

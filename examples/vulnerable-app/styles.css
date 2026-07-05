@@ -39,7 +39,7 @@ body {
 }
 
 .nav a {
-  color: #667085;
+  color: #c7cbd4;
   text-decoration: none;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .eyebrow {
-  color: #7f56d9;
+  color: #c4b5fd;
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -80,7 +80,7 @@ h1 {
 
 .primary-action,
 button {
-  background: #7f56d9;
+  background: #c4b5fd;
   border: 0;
   border-radius: 8px;
   color: #ffffff;
@@ -91,8 +91,18 @@ button {
 }
 
 .primary-action {
-  display: inline-block;
+  justify-self: start;
+}
+
+.quick-start {
+  display: grid;
+  gap: 10px;
   margin-top: 14px;
+  max-width: 360px;
+}
+
+.quick-start input {
+  width: 100%;
 }
 
 .hero-image {
@@ -148,9 +158,20 @@ button {
 }
 
 .field-row {
-  display: flex;
+  display: grid;
   gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
   margin-top: 24px;
+}
+
+.field-row .accesspilot-label {
+  grid-column: 1 / -1;
+}
+
+.accesspilot-label {
+  color: #344054;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 input {
@@ -199,7 +220,6 @@ input {
   }
 
   .field-row {
-    align-items: stretch;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
