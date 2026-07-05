@@ -35,11 +35,17 @@ dependency-install checkboxes stay disabled unless the corresponding server
 ceiling is enabled. Repository runs can instead provide `app_url` for an
 already-running public or operator-approved deployment.
 
-UI/API runs independently select the typed deterministic fallback whenever the
-provider chosen by the request has no real runtime credentials. If valid
-credentials are configured, those runs use the selected provider;
-`ACCESSPILOT_DETERMINISTIC_SPECIALISTS` controls the scaffold/native root graph
-used by `agents-cli` and direct ADK surfaces.
+UI/API runs select the typed deterministic fallback whenever the provider chosen
+by the request has no real runtime credentials. Setting
+`ACCESSPILOT_DETERMINISTIC_SPECIALISTS=true` explicitly forces that fallback for
+UI/API runs as well as the scaffold/native root graph. Otherwise, valid
+credentials activate the provider selected by the run.
+
+The per-run **Reasoning provider** control offers `Deterministic (no LLM)`,
+`Gemini`, and `OpenAI`. Selecting `deterministic` is an explicit
+no-LLM mode; it does not require provider credentials and never sends a model
+request. `ACCESSPILOT_LLM_PROVIDER` remains the server default for the two real
+LLM providers.
 
 An empty `ACCESSPILOT_ALLOWED_SOURCE_ROOTS` resolves to the AccessPilot project
 root. Separate additional roots with `:` on POSIX or `;` on Windows. Source is
@@ -112,6 +118,26 @@ The factory:
 - rejects URL credentials, query strings, fragments, and missing values;
 - reads only the selected provider’s credentials;
 - never includes a credential value in models, reprs, logs, or errors.
+
+## AI model provenance logs
+
+Set `LOG_LEVEL=INFO` and run the server in a terminal. AccessPilot emits
+metadata-only lifecycle records for provider routing and every specialist model
+call:
+
+```text
+INFO:accesspilot.ai:event=ai_run_routing run_id=<id> provider=openai model=gpt-4.1 mode=llm
+INFO:accesspilot.ai:event=ai_model_configured provider=openai model=gpt-4.1 transport=enterprise_llmproxy
+INFO:accesspilot.ai:event=ai_model_request run_id=<id> provider=openai model=gpt-4.1 specialist=accessibility_auditor invocation_id=<id>
+INFO:accesspilot.ai:event=ai_model_response run_id=<id> provider=openai model=gpt-4.1-2025-04-14 specialist=accessibility_auditor invocation_id=<id>
+```
+
+Explicit no-LLM runs use `provider=deterministic model=none mode=deterministic`.
+Credential fallbacks use `mode=deterministic_fallback`, while a server-forced
+run uses `mode=deterministic_forced`. None of these modes emits specialist
+request/response events. Model failures emit `ai_model_error` with only the
+exception type. These records intentionally exclude prompts, responses, source
+content, credentials, proxy URLs, and exception messages.
 
 ## Target authentication
 

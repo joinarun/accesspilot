@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from collections.abc import Mapping
 from urllib.parse import urlsplit, urlunsplit
@@ -16,6 +17,8 @@ from .config import (
     LLMProvider,
     OpenAIProxyProviderConfig,
 )
+
+logger = logging.getLogger("accesspilot.ai")
 
 
 class ProviderConfigurationError(ValueError):
@@ -54,6 +57,10 @@ def _create_gemini_model(
     config: GeminiProviderConfig, source: Mapping[str, str]
 ) -> Gemini:
     _validate_gemini_credentials(config, source)
+    logger.info(
+        "event=ai_model_configured provider=gemini model=%s transport=native_adk",
+        config.model,
+    )
     return Gemini(
         model=config.model,
         retry_options=types.HttpRetryOptions(attempts=config.retry_attempts),
@@ -77,6 +84,11 @@ def _create_openai_proxy_model(
             "install the project with google-adk[extensions]."
         ) from exc
 
+    logger.info(
+        "event=ai_model_configured provider=openai model=%s "
+        "transport=enterprise_llmproxy",
+        config.model.removeprefix("openai/"),
+    )
     return LiteLlm(
         model=model_name,
         api_base=proxy_url,

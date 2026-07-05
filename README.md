@@ -16,7 +16,8 @@ The application is implemented as a typed Google ADK 2 graph with conditional ro
 - Source mapping, grouped repair planning, conservative
   HTML/CSS/JSX/TSX/Vue/Svelte repairs, diff hashing, repeat scans, project
   checks, and regression comparison.
-- Gemini or OpenAI-compatible models through an enterprise LLMproxy abstraction.
+- A per-run choice between deterministic typed specialists, Gemini, or an
+  OpenAI-compatible model through the enterprise LLMproxy abstraction.
 - Before/after review, PR draft generation, and approval bound to the exact diff, verification result, and Git HEAD.
 - A bundled vulnerable app whose exact baseline varies with axe and focused
   source checks. The current end-to-end AA integration reaches zero remaining
@@ -56,7 +57,7 @@ ACCESSPILOT_DETERMINISTIC_SPECIALISTS=true \
   uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 8000
 ```
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000), choose **Use bundled vulnerable app**,
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000), choose **Sample app with accessibility issue**,
 and start a run. AccessPilot scans, repairs, verifies,
 prepares previews and PR text, then waits for approve, reject, or revise. The
 remote-publication checkbox stays disabled unless the API server was started
@@ -113,6 +114,11 @@ LLMPROXY_API_KEY=
 ```
 
 Direct `openai.com` endpoints, URL-embedded credentials, missing proxy credentials, and unsupported provider values are rejected before a model call. The rest of the graph sees only an ADK `BaseLlm`, not provider-specific details. See [configuration.md](docs/configuration.md).
+
+With `LOG_LEVEL=INFO`, terminal logs show the selected provider/model at run
+creation and before/after every specialist model call. Logs contain metadata
+only and never include credentials, proxy URLs, prompts, responses, or source
+content. See [AI model provenance logs](docs/configuration.md#ai-model-provenance-logs).
 
 High-risk capabilities are disabled by server policy by default:
 

@@ -14,7 +14,7 @@ ACCESSPILOT_PUBLIC_BASE_URL=http://127.0.0.1:8000 \
 uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 8000
 ```
 
-In the UI, choose **Use bundled vulnerable app** and run the default AA scan.
+In the UI, choose **Sample app with accessibility issue** and run the default AA scan.
 AA filtering is cumulative across the supported WCAG 2.0, 2.1, and 2.2 axe
 tags. The exact baseline count is intentionally not a release invariant: it can
 change with axe rules, focused source checks, and fixture edits.

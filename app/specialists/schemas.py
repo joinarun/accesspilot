@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -10,8 +10,24 @@ Severity = Literal["critical", "serious", "moderate", "minor", "unknown"]
 RiskLevel = Literal["low", "medium", "high"]
 
 
+def _strip_unsupported_response_schema_keywords(schema: dict[str, Any]) -> None:
+    """Keep strict validation without sending unsupported Gemini keywords."""
+
+    schema.pop("additionalProperties", None)
+    for value in schema.values():
+        if isinstance(value, dict):
+            _strip_unsupported_response_schema_keywords(value)
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    _strip_unsupported_response_schema_keywords(item)
+
+
 class _SpecialistOutput(BaseModel):
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(
+        extra="forbid",
+        json_schema_extra=_strip_unsupported_response_schema_keywords,
+    )
 
 
 class AuditedIssue(_SpecialistOutput):

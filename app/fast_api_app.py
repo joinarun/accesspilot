@@ -60,6 +60,10 @@ def _configured_env(name: str) -> str | None:
     return value
 
 
+def _truthy(value: str | None) -> bool:
+    return bool(value and value.strip().lower() in {"1", "true", "yes", "on"})
+
+
 def _loopback_client(scope: dict) -> bool:
     client = scope.get("client")
     host = client[0] if client else ""
@@ -171,7 +175,15 @@ async def public_config() -> PublicConfig:
     return PublicConfig(
         providers=[
             ProviderAvailability(
+                name=LlmProviderName.DETERMINISTIC,
+                label="Deterministic (no LLM)",
+                configured=True,
+                model="None",
+                detail="Use typed local specialists without making an LLM request.",
+            ),
+            ProviderAvailability(
                 name=LlmProviderName.GEMINI,
+                label="Gemini",
                 configured=gemini_configured,
                 model=config.gemini.model,
                 detail=(
@@ -182,6 +194,7 @@ async def public_config() -> PublicConfig:
             ),
             ProviderAvailability(
                 name=LlmProviderName.OPENAI,
+                label="OpenAI",
                 configured=proxy_configured,
                 model=config.openai.model,
                 detail=(
@@ -191,7 +204,11 @@ async def public_config() -> PublicConfig:
                 ),
             ),
         ],
-        default_provider=LlmProviderName(config.provider.value),
+        default_provider=(
+            LlmProviderName.DETERMINISTIC
+            if _truthy(os.getenv("ACCESSPILOT_DETERMINISTIC_SPECIALISTS"))
+            else LlmProviderName(config.provider.value)
+        ),
         max_repair_rounds=settings.max_repair_rounds,
         sample_target="sample://vulnerable-app",
         local_execution_enabled=settings.enable_local_execution,

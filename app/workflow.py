@@ -536,13 +536,14 @@ def merge_planner_node(ctx: Context, node_input: dict[str, Any]) -> Event:
     state = _state_from_context(ctx)
     output = PlannerOutput.model_validate(node_input)
     current = state.verification_issues or state.issues
+    known_issue_ids = {issue.id for issue in current}
     if not state.workspace():
         raise RuntimeError("Repair planning requires a workspace")
     deterministic_plan = repair_engine.plan(state.workspace(), current, state.mappings)
     state.repair_plan = _reconcile_planner_output(
         deterministic_plan,
         output,
-        known_issue_ids={issue.id for issue in current},
+        known_issue_ids=known_issue_ids,
         workspace=state.workspace(),
     )
     state.repair_plan.generated_by = "repair-planner-agent + deterministic-policy"
@@ -553,11 +554,23 @@ def merge_planner_node(ctx: Context, node_input: dict[str, Any]) -> Event:
                 level="warning", stage="repair_planner", text=output.stop_reason
             )
         )
-        state.repair_plan.actions = []
-        state.repair_plan.unresolved_issue_ids = sorted({issue.id for issue in current})
-        state.repair_plan.summary = (
-            f"Planner stopped safely; {len(current)} issue(s) require human review."
+        contradictory = bool(output.change_groups)
+        state.repair_plan = _apply_planner_stop_policy(
+            state.repair_plan,
+            output,
+            known_issue_ids=known_issue_ids,
         )
+        if contradictory and state.repair_plan.actions:
+            state.messages.append(
+                WorkflowMessage(
+                    level="warning",
+                    stage="repair_planner",
+                    text=(
+                        "Planner returned repair groups with a stop reason; "
+                        "AccessPilot retained only deterministic-policy-backed actions."
+                    ),
+                )
+            )
     state.unresolved_issue_ids = sorted(
         set(state.repair_plan.unresolved_issue_ids + output.unresolved_issue_ids)
     )
@@ -569,6 +582,46 @@ def merge_planner_node(ctx: Context, node_input: dict[str, Any]) -> Event:
         state,
         stage="repair_planner",
         message=state.repair_plan.summary,
+    )
+
+
+def _apply_planner_stop_policy(
+    plan: RepairPlan,
+    output: PlannerOutput,
+    *,
+    known_issue_ids: set[str],
+) -> RepairPlan:
+    """Resolve contradictory planner output without weakening policy boundaries."""
+    if not output.stop_reason:
+        return plan
+    if not output.change_groups:
+        return plan.model_copy(
+            update={
+                "actions": [],
+                "unresolved_issue_ids": sorted(known_issue_ids),
+                "summary": (
+                    f"Planner stopped safely; {len(known_issue_ids)} issue(s) "
+                    "require human review."
+                ),
+            }
+        )
+
+    actions = [action for action in plan.actions if action.automatic]
+    covered_issue_ids = {
+        issue_id for action in actions for issue_id in action.issue_ids
+    }
+    unresolved_issue_ids = sorted(
+        set(plan.unresolved_issue_ids) | (known_issue_ids - covered_issue_ids)
+    )
+    return plan.model_copy(
+        update={
+            "actions": actions,
+            "unresolved_issue_ids": unresolved_issue_ids,
+            "summary": (
+                f"Apply {len(actions)} policy-constrained repair group(s); "
+                f"leave {len(unresolved_issue_ids)} issue(s) for human review."
+            ),
+        }
     )
 
 

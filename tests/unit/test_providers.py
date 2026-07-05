@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+from types import SimpleNamespace
+
 import pytest
+from google.adk.models.llm_response import LlmResponse
+from pydantic import ValidationError
 
 from app.providers import (
     GeminiProviderConfig,
@@ -10,7 +14,15 @@ from app.providers import (
     ProviderConfigurationError,
     create_llm_model,
 )
-from app.specialists import create_specialist_agents
+from app.specialists import (
+    AuditorOutput,
+    InvestigatorOutput,
+    PlannerOutput,
+    PullRequestDraft,
+    RepairerOutput,
+    VerifierOutput,
+    create_specialist_agents,
+)
 
 
 def test_gemini_selection_does_not_require_openai_configuration() -> None:
@@ -47,9 +59,10 @@ def test_openai_rejects_public_endpoint_without_leaking_key() -> None:
     assert secret not in str(exc_info.value)
 
 
-def test_openai_builds_litellm_model_for_enterprise_proxy() -> None:
+def test_openai_builds_litellm_model_for_enterprise_proxy(caplog) -> None:
     pytest.importorskip("litellm")
     secret = "test-only-proxy-key"
+    caplog.set_level("INFO", logger="accesspilot.ai")
 
     model = create_llm_model(
         LLMConfig(
@@ -66,6 +79,11 @@ def test_openai_builds_litellm_model_for_enterprise_proxy() -> None:
     assert model._additional_args["api_base"] == "https://llmproxy.example.test/v1"
     assert model._additional_args["api_key"] == secret
     assert secret not in repr(model)
+    assert (
+        "event=ai_model_configured provider=openai model=gpt-4.1 "
+        "transport=enterprise_llmproxy" in caplog.text
+    )
+    assert secret not in caplog.text
 
 
 def test_environment_loader_reads_provider_metadata() -> None:
@@ -105,3 +123,74 @@ def test_specialist_factories_return_fresh_static_graph_agents() -> None:
     assert all(agent.mode == "single_turn" for agent in first.values())
     assert all(agent.tools == [] for agent in first.values())
     assert all(agent.output_schema is not None for agent in first.values())
+
+
+@pytest.mark.parametrize(
+    "output_schema",
+    [
+        AuditorOutput,
+        InvestigatorOutput,
+        PlannerOutput,
+        RepairerOutput,
+        VerifierOutput,
+        PullRequestDraft,
+    ],
+)
+def test_specialist_schema_is_gemini_compatible(output_schema) -> None:
+    schema = output_schema.model_json_schema()
+
+    def contains_additional_properties(value) -> bool:
+        if isinstance(value, dict):
+            return "additionalProperties" in value or any(
+                contains_additional_properties(item) for item in value.values()
+            )
+        if isinstance(value, list):
+            return any(contains_additional_properties(item) for item in value)
+        return False
+
+    assert contains_additional_properties(schema) is False
+
+
+def test_specialist_runtime_validation_still_rejects_extra_fields() -> None:
+    with pytest.raises(ValidationError, match="Extra inputs are not permitted"):
+        AuditorOutput.model_validate(
+            {"issues": [], "caveats": [], "unexpected": "not allowed"}
+        )
+
+
+@pytest.mark.asyncio
+async def test_specialist_model_callbacks_log_safe_provenance(caplog) -> None:
+    caplog.set_level("INFO", logger="accesspilot.ai")
+    agent = create_specialist_agents("openai/gpt-4.1")["auditor"]
+    context = SimpleNamespace(
+        state={"workflow_state": {"run_id": "run-123"}},
+        session=SimpleNamespace(id="session-123"),
+        run_id="node-run-1",
+        invocation_id="invocation-123",
+    )
+
+    await agent.before_model_callback(
+        callback_context=context,
+        llm_request=object(),
+    )
+    await agent.after_model_callback(
+        callback_context=context,
+        llm_response=LlmResponse(model_version="gpt-4.1-2026-01-01"),
+    )
+    await agent.on_model_error_callback(
+        callback_context=context,
+        llm_request=object(),
+        error=RuntimeError("sensitive upstream response"),
+    )
+
+    assert (
+        "event=ai_model_request run_id=run-123 provider=openai model=gpt-4.1 "
+        "specialist=accessibility_auditor invocation_id=invocation-123" in caplog.text
+    )
+    assert (
+        "event=ai_model_response run_id=run-123 provider=openai "
+        "model=gpt-4.1-2026-01-01 specialist=accessibility_auditor "
+        "invocation_id=invocation-123" in caplog.text
+    )
+    assert "error_type=RuntimeError" in caplog.text
+    assert "sensitive upstream response" not in caplog.text

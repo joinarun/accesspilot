@@ -28,13 +28,22 @@ accepts a legacy `{ "data": ... }` envelope, but the current run snapshot is
 {
   "providers": [
     {
+      "name": "deterministic",
+      "label": "Deterministic (no LLM)",
+      "configured": true,
+      "model": "None",
+      "detail": "Use typed local specialists without making an LLM request."
+    },
+    {
       "name": "gemini",
+      "label": "Gemini",
       "configured": true,
       "model": "gemini-2.5-pro",
       "detail": "Native Gemini credentials are configured."
     },
     {
       "name": "openai",
+      "label": "OpenAI",
       "configured": false,
       "model": "gpt-4.1",
       "detail": "Configure the approved LLMproxy connection."
@@ -55,6 +64,10 @@ in the form and cannot be raised by a request. Set the corresponding
 per-run checkbox. The UI also uses safe built-in WCAG and scan-depth defaults
 because those options are request fields rather than public configuration
 fields.
+
+Choose `deterministic` to run the typed local specialists without an LLM call.
+Choose `gemini` or `openai` to use that model when its credentials are configured;
+otherwise the server reports and uses the deterministic fallback.
 
 ### `POST /api/runs`
 

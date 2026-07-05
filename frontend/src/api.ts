@@ -19,8 +19,9 @@ const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? "").replace(/\/$/, "");
 type JsonObject = Record<string, unknown>;
 
 const fallbackProviders: SelectOption[] = [
+  { value: "deterministic", label: "Deterministic (no LLM)" },
   { value: "gemini", label: "Gemini" },
-  { value: "openai", label: "OpenAI via LLMproxy" },
+  { value: "openai", label: "OpenAI" },
 ];
 
 const fallbackWcagLevels: SelectOption[] = [
