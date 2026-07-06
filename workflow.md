@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     USER["User / Accessibility Reviewer"]
     TARGET["Web Application Under Test"]
@@ -73,3 +74,4 @@ flowchart LR
     class COPY,PATCH,TESTS,REPORT data;
     class REVIEW gate;
     class USER,TARGET,REPO,MERGE,STOP external;
+```
