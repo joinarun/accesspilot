@@ -1,0 +1,531 @@
+{"kind":"deck","id":"pr/rt5xzp","name":"Deck"}
+{"kind":"layout","layoutId":"6c3a17d5-58fb-48b8-976b-aa26dcc89720","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"2c784fb8-5f12-42a8-964a-0e2efcb9bb22","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/20zfjb","slide":1,"title":"KAGGLE · AGENTS FOR GOOD","textShapes":5}
+{"kind":"shape","id":"sh/byhgn29g","slide":1,"bbox":[0,558,1280,162]}
+{"kind":"shape","id":"sh/idonyd0z","slide":1,"bbox":[0,556,320,0]}
+{"kind":"shape","id":"sh/tcj6tova","slide":1,"bbox":[320,556,320,0]}
+{"kind":"shape","id":"sh/0rqd4vmt","slide":1,"bbox":[640,556,320,0]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":1,"bbox":[960,556,320,0]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":1,"text":"KAGGLE · AGENTS FOR GOOD","textPreview":"KAGGLE · AGENTS FOR GOOD","textChars":24,"textLines":1,"bbox":[42,32,226,34]}
+{"kind":"textbox","id":"sh/tovahoza","slide":1,"name":"cover-thesis","text":"Accessibility should end in a verified fix—not a report.","textPreview":"Accessibility should end in a verified fix—not a report.","textChars":56,"textLines":1,"bbox":[52,582,1176,48]}
+{"kind":"textbox","id":"sh/032lszqt","slide":1,"text":"Autonomous Accessibility Repair Agent","textPreview":"Autonomous Accessibility Repair Agent","textChars":37,"textLines":1,"bbox":[52,638,540,28]}
+{"kind":"textbox","id":"sh/61032lsz","slide":1,"text":"Built with Google ADK · Vibe-coded in Google Antigravity","textPreview":"Built with Google ADK · Vibe-coded in Google Antigravity","textChars":56,"textLines":1,"bbox":[52,674,760,24]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":1,"text":"Google/Kaggle competition overview","textPreview":"Google/Kaggle competition overview","textChars":34,"textLines":1,"bbox":[900,674,328,24]}
+{"kind":"image","id":"im/5o7qpg3e","slide":1,"name":"","alt":"AccessPilot scan, fix, verify, and pull-request workflow","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/20zfjb","slide":1,"text":""}
+{"kind":"slide","id":"sl/8bpyav","slide":2,"title":"WHY THIS MATTERS","textShapes":19}
+{"kind":"shape","id":"sh/g3ex0nux","slide":2,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":2,"text":"WHY THIS MATTERS","textPreview":"WHY THIS MATTERS","textChars":16,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":2,"text":"02 / 15","textPreview":"02 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":2,"name":"slide-2-title","text":"Accessibility is a mainstream quality problem.","textPreview":"Accessibility is a mainstream quality problem.","textChars":46,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":2,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/r65wjudg","slide":2,"bbox":[54,146,610,0]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":2,"text":"95.9%","textPreview":"95.9%","textChars":5,"textLines":1,"bbox":[54,164,610,88]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":2,"text":"of top home pages showed detectable WCAG failures","textPreview":"of top home pages showed detectable WCAG failures","textChars":49,"textLines":1,"bbox":[54,250,610,32]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":2,"text":"WebAIM Million, 2026","textPreview":"WebAIM Million, 2026","textChars":20,"textLines":1,"bbox":[54,285,610,44]}
+{"kind":"shape","id":"sh/65wjudg7","slide":2,"bbox":[734,146,214,0]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":2,"text":"1 in 6","textPreview":"1 in 6","textChars":6,"textLines":1,"bbox":[734,164,214,88]}
+{"kind":"textbox","id":"sh/obm58z25","slide":2,"text":"people globally experience significant disability","textPreview":"people globally experience significant disability","textChars":49,"textLines":1,"bbox":[734,250,214,32]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":2,"text":"WHO","textPreview":"WHO","textChars":3,"textLines":1,"bbox":[734,285,214,44]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":2,"bbox":[994,146,232,0]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":2,"text":"56.1","textPreview":"56.1","textChars":4,"textLines":1,"bbox":[994,164,232,88]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":2,"text":"detectable errors per home page","textPreview":"detectable errors per home page","textChars":31,"textLines":1,"bbox":[994,250,232,32]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":2,"text":"on average","textPreview":"on average","textChars":10,"textLines":1,"bbox":[994,285,232,44]}
+{"kind":"shape","id":"sh/al87ed8b","slide":2,"bbox":[54,398,1172,194]}
+{"kind":"textbox","id":"sh/z61032ls","slide":2,"text":"The most common barriers are also highly visible in everyday interfaces.","textPreview":"The most common barriers are also highly visible in everyday interfaces.","textChars":72,"textLines":1,"bbox":[82,424,820,34]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":2,"text":"83.9%","textPreview":"83.9%","textChars":5,"textLines":1,"bbox":[82,480,170,64]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":2,"text":"low-contrast text","textPreview":"low-contrast text","textChars":17,"textLines":1,"bbox":[246,495,280,34]}
+{"kind":"textbox","id":"sh/tovahoza","slide":2,"text":"51%","textPreview":"51%","textChars":3,"textLines":1,"bbox":[650,480,140,64]}
+{"kind":"textbox","id":"sh/032lszqt","slide":2,"text":"missing form labels","textPreview":"missing form labels","textChars":19,"textLines":1,"bbox":[786,495,300,34]}
+{"kind":"textbox","id":"sh/bulwval8","slide":2,"text":"Automated detection covers only a subset of accessibility.","textPreview":"Automated detection covers only a subset of accessibility.","textChars":58,"textLines":1,"bbox":[82,554,780,26]}
+{"kind":"shape","id":"sh/i9s36hcr","slide":2,"bbox":[52,681,1176,0]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":2,"name":"source-note","text":"Sources: WHO, Disability (2023); WebAIM, The WebAIM Million 2026. Accessed 6 Jul 2026.","textPreview":"Sources: WHO, Disability (2023); WebAIM, The WebAIM Million 2026. Accessed 6 Jul 2026.","textChars":86,"textLines":1,"bbox":[52,687,1176,21]}
+{"kind":"notes","id":"nt/8bpyav","slide":2,"text":""}
+{"kind":"slide","id":"sl/2ienxj","slide":3,"title":"THE LAST-MILE GAP","textShapes":20}
+{"kind":"shape","id":"sh/u54zidon","slide":3,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":3,"text":"THE LAST-MILE GAP","textPreview":"THE LAST-MILE GAP","textChars":17,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/cbulwval","slide":3,"text":"03 / 15","textPreview":"03 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":3,"name":"slide-3-title","text":"Scanners find symptoms. Teams still own the hard last mile.","textPreview":"Scanners find symptoms. Teams still own the hard last mile.","textChars":59,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/ytsvu9kn","slide":3,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/5kb6xkf6","slide":3,"bbox":[64,162,220,92]}
+{"kind":"shape","id":"sh/czed8v6p","slide":3,"bbox":[80,176,28,0]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":3,"text":"Scanner","textPreview":"Scanner","textChars":7,"textLines":1,"bbox":[80,186,188,28]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":3,"text":"Rule violation + selector","textPreview":"Rule violation + selector","textChars":25,"textLines":1,"bbox":[80,215,188,32]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":3,"bbox":[358,162,220,92]}
+{"kind":"shape","id":"sh/9w3m94fu","slide":3,"bbox":[374,176,28,0]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":3,"text":"Backlog","textPreview":"Backlog","textChars":7,"textLines":1,"bbox":[374,186,188,28]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":3,"text":"Issue ticket without code context","textPreview":"Issue ticket without code context","textChars":33,"textLines":1,"bbox":[374,215,188,32]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":3,"bbox":[652,162,220,92]}
+{"kind":"shape","id":"sh/9knih4by","slide":3,"bbox":[668,176,28,0]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":3,"text":"Developer","textPreview":"Developer","textChars":9,"textLines":1,"bbox":[668,186,188,28]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":3,"text":"Find owner, plan change, edit","textPreview":"Find owner, plan change, edit","textChars":29,"textLines":1,"bbox":[668,215,188,32]}
+{"kind":"shape","id":"sh/gvy90je9","slide":3,"bbox":[946,162,220,92]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":3,"bbox":[962,176,28,0]}
+{"kind":"textbox","id":"sh/d8bat47y","slide":3,"text":"Re-test","textPreview":"Re-test","textChars":7,"textLines":1,"bbox":[962,186,188,28]}
+{"kind":"textbox","id":"sh/knih4byh","slide":3,"text":"Repeat scan and review","textPreview":"Repeat scan and review","textChars":22,"textLines":1,"bbox":[962,215,188,32]}
+{"kind":"shape","id":"sh/v6psfil0","slide":3,"bbox":[284,208,74,0]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":3,"bbox":[578,208,74,0]}
+{"kind":"shape","id":"sh/d0z61032","slide":3,"bbox":[872,208,74,0]}
+{"kind":"shape","id":"sh/kf6dcbul","slide":3,"bbox":[300,276,0,72]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":3,"text":"Interpretation gap","textPreview":"Interpretation gap","textChars":18,"textLines":1,"bbox":[195,358,210,26]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":3,"text":"What does this mean for a keyboard or screen-reader user?","textPreview":"What does this mean for a keyboard or screen-reader user?","textChars":57,"textLines":1,"bbox":[175,390,250,86]}
+{"kind":"shape","id":"sh/donyd0z6","slide":3,"bbox":[594,276,0,72]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":3,"text":"Ownership gap","textPreview":"Ownership gap","textChars":13,"textLines":1,"bbox":[489,358,210,26]}
+{"kind":"textbox","id":"sh/u54zidon","slide":3,"text":"Which component, style, or route actually owns the barrier?","textPreview":"Which component, style, or route actually owns the barrier?","textChars":59,"textLines":1,"bbox":[469,390,250,86]}
+{"kind":"shape","id":"sh/nqxs72x4","slide":3,"bbox":[888,276,0,72]}
+{"kind":"textbox","id":"sh/cbulwval","slide":3,"text":"Evidence gap","textPreview":"Evidence gap","textChars":12,"textLines":1,"bbox":[783,358,210,26]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":3,"text":"Did the patch fix the issue without creating a regression?","textPreview":"Did the patch fix the issue without creating a regression?","textChars":58,"textLines":1,"bbox":[763,390,250,86]}
+{"kind":"shape","id":"sh/ytsvu9kn","slide":3,"bbox":[150,520,980,108]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":3,"text":"A tool can identify potential barriers. It cannot determine accessibility on its own.","textPreview":"A tool can identify potential barriers. It cannot determine accessibility on its own.","textChars":85,"textLines":1,"bbox":[184,544,912,34]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":3,"text":"Knowledgeable human judgment remains essential.","textPreview":"Knowledgeable human judgment remains essential.","textChars":47,"textLines":1,"bbox":[184,588,912,24]}
+{"kind":"shape","id":"sh/5kb6xkf6","slide":3,"bbox":[52,681,1176,0]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":3,"name":"source-note","text":"Source: W3C Web Accessibility Initiative, Selecting Web Accessibility Evaluation Tools. Accessed 6 Jul 2026.","textPreview":"Source: W3C Web Accessibility Initiative, Selecting Web Accessibility Evaluation Tools. Accessed 6 Jul 2026.","textChars":108,"textLines":1,"bbox":[52,687,1176,21]}
+{"kind":"notes","id":"nt/2ienxj","slide":3,"text":""}
+{"kind":"slide","id":"sl/w37vdw","slide":4,"title":"THE AGENTIC ANSWER","textShapes":26}
+{"kind":"shape","id":"sh/kf6dcbul","slide":4,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":4,"text":"THE AGENTIC ANSWER","textPreview":"THE AGENTIC ANSWER","textChars":18,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":4,"text":"04 / 15","textPreview":"04 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/d8bat47y","slide":4,"name":"slide-4-title","text":"AccessPilot closes the loop from evidence to review.","textPreview":"AccessPilot closes the loop from evidence to review.","textChars":52,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/knih4byh","slide":4,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/v6psfil0","slide":4,"bbox":[54,142,338,0]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":4,"text":"DETERMINISTIC EVIDENCE","textPreview":"DETERMINISTIC EVIDENCE","textChars":22,"textLines":1,"bbox":[54,160,338,28]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":4,"text":"Browser scans and stable fingerprints","textPreview":"Browser scans and stable fingerprints","textChars":37,"textLines":1,"bbox":[54,194,338,48]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":4,"bbox":[450,142,338,0]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":4,"text":"AGENTIC JUDGMENT","textPreview":"AGENTIC JUDGMENT","textChars":16,"textLines":1,"bbox":[450,160,338,28]}
+{"kind":"textbox","id":"sh/val87ed8","slide":4,"text":"Interpret, map, group, and propose","textPreview":"Interpret, map, group, and propose","textChars":34,"textLines":1,"bbox":[450,194,338,48]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":4,"bbox":[846,142,338,0]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":4,"text":"HUMAN CONTROL","textPreview":"HUMAN CONTROL","textChars":13,"textLines":1,"bbox":[846,160,338,28]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":4,"text":"Approve the exact verified change","textPreview":"Approve the exact verified change","textChars":33,"textLines":1,"bbox":[846,194,338,48]}
+{"kind":"textbox","id":"sh/vixczed8","slide":4,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[56,326,72,72]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":4,"text":"Explore","textPreview":"Explore","textChars":7,"textLines":1,"bbox":[36,414,112,30]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":4,"text":"Rendered routes","textPreview":"Rendered routes","textChars":15,"textLines":1,"bbox":[2,450,180,52]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":4,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[298,326,72,72]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":4,"text":"Find","textPreview":"Find","textChars":4,"textLines":1,"bbox":[278,414,112,30]}
+{"kind":"textbox","id":"sh/judg7ads","slide":4,"text":"Normalized barriers","textPreview":"Normalized barriers","textChars":19,"textLines":1,"bbox":[244,450,180,52]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":4,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[540,326,72,72]}
+{"kind":"textbox","id":"sh/1032lszq","slide":4,"text":"Trace","textPreview":"Trace","textChars":5,"textLines":1,"bbox":[520,414,112,30]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":4,"text":"Source ownership","textPreview":"Source ownership","textChars":16,"textLines":1,"bbox":[486,450,180,52]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[782,326,72,72]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":4,"text":"Repair","textPreview":"Repair","textChars":6,"textLines":1,"bbox":[762,414,112,30]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":4,"text":"Isolated working copy","textPreview":"Isolated working copy","textChars":21,"textLines":1,"bbox":[728,450,180,52]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":4,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1024,326,72,72]}
+{"kind":"textbox","id":"sh/nap4r65w","slide":4,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[1004,414,112,30]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":4,"text":"Re-scan + review","textPreview":"Re-scan + review","textChars":16,"textLines":1,"bbox":[970,450,180,52]}
+{"kind":"shape","id":"sh/4r65wjud","slide":4,"bbox":[128,362,170,0]}
+{"kind":"shape","id":"sh/xc3ylc7u","slide":4,"bbox":[370,362,170,0]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":4,"bbox":[612,362,170,0]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":4,"bbox":[854,362,170,0]}
+{"kind":"shape","id":"sh/4zidonyd","slide":4,"bbox":[170,548,940,82]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":4,"text":"Agentic judgment where context matters. Deterministic control where side effects matter.","textPreview":"Agentic judgment where context matters. Deterministic control where side effects matter.","textChars":88,"textLines":1,"bbox":[198,570,884,38]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":4,"text":"AccessPilot · Google/Kaggle competition overview","textPreview":"AccessPilot · Google/Kaggle competition overview","textChars":48,"textLines":1,"bbox":[52,688,1176,18]}
+{"kind":"notes","id":"nt/w37vdw","slide":4,"text":""}
+{"kind":"slide","id":"sl/w32ksz","slide":5,"title":"GOOGLE FOUNDATION","textShapes":25}
+{"kind":"shape","id":"sh/qh0fepkz","slide":5,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":5,"text":"GOOGLE FOUNDATION","textPreview":"GOOGLE FOUNDATION","textChars":17,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":5,"text":"05 / 15","textPreview":"05 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":5,"name":"slide-5-title","text":"Google ADK makes the repair loop explicit—and resumable.","textPreview":"Google ADK makes the repair loop explicit—and resumable.","textChars":56,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":5,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":5,"bbox":[54,140,386,468]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":5,"text":"GOOGLE","textPreview":"GOOGLE","textChars":6,"textLines":1,"bbox":[84,176,320,32]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":5,"text":"ADK 2","textPreview":"ADK 2","textChars":5,"textLines":1,"bbox":[82,216,330,118]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":5,"bbox":[84,350,70,0]}
+{"kind":"shape","id":"sh/gn29gr2p","slide":5,"bbox":[154,350,70,0]}
+{"kind":"shape","id":"sh/58z25kb6","slide":5,"bbox":[224,350,70,0]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":5,"bbox":[294,350,70,0]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":5,"text":"The orchestration backbone for every agent stage, branch, retry, and human decision.","textPreview":"The orchestration backbone for every agent stage, branch, retry, and human decision.","textChars":84,"textLines":1,"bbox":[84,382,310,112]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":5,"text":"ADK-NATIVE WORKFLOW","textPreview":"ADK-NATIVE WORKFLOW","textChars":19,"textLines":1,"bbox":[84,522,236,36]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":5,"text":"The UI and scanner plug into this graph; they do not replace it.","textPreview":"The UI and scanner plug into this graph; they do not replace it.","textChars":64,"textLines":1,"bbox":[84,568,310,32]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":5,"text":"GRAPH RUNTIME","textPreview":"GRAPH RUNTIME","textChars":13,"textLines":1,"bbox":[484,146,330,24]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":5,"bbox":[484,194,10,10]}
+{"kind":"textbox","id":"sh/cbulwval","slide":5,"text":"Workflow","textPreview":"Workflow","textChars":8,"textLines":1,"bbox":[508,188,290,28]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":5,"text":"Typed nodes and conditional edges","textPreview":"Typed nodes and conditional edges","textChars":33,"textLines":1,"bbox":[508,220,300,42]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":5,"bbox":[484,286,10,10]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":5,"text":"FunctionNode","textPreview":"FunctionNode","textChars":12,"textLines":1,"bbox":[508,280,290,28]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":5,"text":"Deterministic workflow stages","textPreview":"Deterministic workflow stages","textChars":29,"textLines":1,"bbox":[508,312,300,42]}
+{"kind":"shape","id":"sh/yxobm58z","slide":5,"bbox":[484,378,10,10]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":5,"text":"RetryConfig","textPreview":"RetryConfig","textChars":11,"textLines":1,"bbox":[508,372,290,28]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":5,"text":"Bounded retries and back-edges","textPreview":"Bounded retries and back-edges","textChars":30,"textLines":1,"bbox":[508,404,300,42]}
+{"kind":"shape","id":"sh/r65wjudg","slide":5,"bbox":[484,470,10,10]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":5,"text":"App + Runner","textPreview":"App + Runner","textChars":12,"textLines":1,"bbox":[508,464,290,28]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":5,"text":"Execution and shared run state","textPreview":"Execution and shared run state","textChars":30,"textLines":1,"bbox":[508,496,300,42]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":5,"text":"AGENT + HUMAN CONTRACTS","textPreview":"AGENT + HUMAN CONTRACTS","textChars":23,"textLines":1,"bbox":[860,146,330,24]}
+{"kind":"shape","id":"sh/a1gvy90j","slide":5,"bbox":[860,194,10,10]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":5,"text":"LlmAgent","textPreview":"LlmAgent","textChars":8,"textLines":1,"bbox":[884,188,290,28]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":5,"text":"Six specialist reasoning roles","textPreview":"Six specialist reasoning roles","textChars":30,"textLines":1,"bbox":[884,220,300,42]}
+{"kind":"shape","id":"sh/hoza1gvy","slide":5,"bbox":[860,286,10,10]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":5,"text":"BaseLlm","textPreview":"BaseLlm","textChars":7,"textLines":1,"bbox":[884,280,290,28]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":5,"text":"Provider-independent model abstraction","textPreview":"Provider-independent model abstraction","textChars":38,"textLines":1,"bbox":[884,312,300,42]}
+{"kind":"shape","id":"sh/svu9knih","slide":5,"bbox":[860,378,10,10]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":5,"text":"RequestInput","textPreview":"RequestInput","textChars":12,"textLines":1,"bbox":[884,372,290,28]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":5,"text":"Pause and resume approve / revise / reject","textPreview":"Pause and resume approve / revise / reject","textChars":42,"textLines":1,"bbox":[884,404,300,42]}
+{"kind":"shape","id":"sh/3ylc7u54","slide":5,"bbox":[52,681,1176,0]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":5,"name":"source-note","text":"Sources: Google Agent Development Kit documentation; AccessPilot app/workflow.py and app/agent.py.","textPreview":"Sources: Google Agent Development Kit documentation; AccessPilot app/workflow.py and app/agent.py.","textChars":98,"textLines":1,"bbox":[52,687,1176,21]}
+{"kind":"notes","id":"nt/w32ksz","slide":5,"text":""}
+{"kind":"slide","id":"sl/inrzrl","slide":6,"title":"GOOGLE TOOLCHAIN","textShapes":27}
+{"kind":"shape","id":"sh/18jqh0fe","slide":6,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":6,"text":"GOOGLE TOOLCHAIN","textPreview":"GOOGLE TOOLCHAIN","textChars":16,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":6,"text":"06 / 15","textPreview":"06 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":6,"name":"slide-6-title","text":"The Google stack accelerates build, reason, and evaluate.","textPreview":"The Google stack accelerates build, reason, and evaluate.","textChars":57,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":6,"bbox":[52,106,1176,0]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":6,"text":"ACTIVE IN THE LOCAL PRODUCT","textPreview":"ACTIVE IN THE LOCAL PRODUCT","textChars":27,"textLines":1,"bbox":[54,130,242,32]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":6,"bbox":[76,206,58,58]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":6,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[76,219,58,28]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":6,"text":"Google ADK 2","textPreview":"Google ADK 2","textChars":12,"textLines":1,"bbox":[58,282,256,30]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":6,"text":"Graph orchestration + resumable execution","textPreview":"Graph orchestration + resumable execution","textChars":41,"textLines":1,"bbox":[58,318,256,62]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":6,"bbox":[376,206,58,58]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":6,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[376,219,58,28]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":6,"text":"Gemini","textPreview":"Gemini","textChars":6,"textLines":1,"bbox":[358,282,256,30]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":6,"text":"Optional native ADK reasoning engine","textPreview":"Optional native ADK reasoning engine","textChars":36,"textLines":1,"bbox":[358,318,256,62]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":6,"bbox":[676,206,58,58]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":6,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[676,219,58,28]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":6,"text":"Google Gen AI SDK","textPreview":"Google Gen AI SDK","textChars":17,"textLines":1,"bbox":[658,282,256,30]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":6,"text":"Structured model types + retry controls","textPreview":"Structured model types + retry controls","textChars":39,"textLines":1,"bbox":[658,318,256,62]}
+{"kind":"shape","id":"sh/gfmlkjm1","slide":6,"bbox":[976,206,58,58]}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":6,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[976,219,58,28]}
+{"kind":"textbox","id":"sh/58z25kb6","slide":6,"text":"Google Agents CLI","textPreview":"Google Agents CLI","textChars":17,"textLines":1,"bbox":[958,282,256,30]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":6,"text":"Scaffold, playground, lint, and eval loop","textPreview":"Scaffold, playground, lint, and eval loop","textChars":41,"textLines":1,"bbox":[958,318,256,62]}
+{"kind":"shape","id":"sh/n29gr2p8","slide":6,"bbox":[134,235,242,0]}
+{"kind":"shape","id":"sh/gbq1oryt","slide":6,"bbox":[434,235,242,0]}
+{"kind":"shape","id":"sh/5wjudg7a","slide":6,"bbox":[734,235,242,0]}
+{"kind":"shape","id":"sh/y90je9cv","slide":6,"bbox":[54,408,1172,0]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":6,"text":"OPTIONAL PRODUCTION HOOKS","textPreview":"OPTIONAL PRODUCTION HOOKS","textChars":25,"textLines":1,"bbox":[54,432,242,32]}
+{"kind":"shape","id":"sh/cbulwval","slide":6,"bbox":[54,500,336,0]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":6,"text":"Vertex AI sessions","textPreview":"Vertex AI sessions","textChars":18,"textLines":1,"bbox":[54,520,336,30]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":6,"text":"Durable production session integration","textPreview":"Durable production session integration","textChars":38,"textLines":1,"bbox":[54,558,336,48]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":6,"text":"OPTIONAL","textPreview":"OPTIONAL","textChars":8,"textLines":1,"bbox":[54,616,94,28]}
+{"kind":"shape","id":"sh/d0z61032","slide":6,"bbox":[444,500,336,0]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":6,"text":"Cloud Storage artifacts","textPreview":"Cloud Storage artifacts","textChars":23,"textLines":1,"bbox":[444,520,336,30]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":6,"text":"Cloud persistence for generated evidence","textPreview":"Cloud persistence for generated evidence","textChars":40,"textLines":1,"bbox":[444,558,336,48]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":6,"text":"OPTIONAL","textPreview":"OPTIONAL","textChars":8,"textLines":1,"bbox":[444,616,94,28]}
+{"kind":"shape","id":"sh/d8bat47y","slide":6,"bbox":[834,500,336,0]}
+{"kind":"textbox","id":"sh/knih4byh","slide":6,"text":"Cloud Trace + Logging","textPreview":"Cloud Trace + Logging","textChars":21,"textLines":1,"bbox":[834,520,336,30]}
+{"kind":"textbox","id":"sh/val87ed8","slide":6,"text":"Opt-in metadata-only observability","textPreview":"Opt-in metadata-only observability","textChars":34,"textLines":1,"bbox":[834,558,336,48]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":6,"text":"OPTIONAL","textPreview":"OPTIONAL","textChars":8,"textLines":1,"bbox":[834,616,94,28]}
+{"kind":"shape","id":"sh/2t83itgf","slide":6,"bbox":[52,681,1176,0]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":6,"name":"source-note","text":"Sources: Google Agents CLI documentation; AccessPilot provider, session, artifact, and telemetry services.","textPreview":"Sources: Google Agents CLI documentation; AccessPilot provider, session, artifact, and telemetry services.","textChars":106,"textLines":1,"bbox":[52,687,1176,21]}
+{"kind":"notes","id":"nt/inrzrl","slide":6,"text":""}
+{"kind":"slide","id":"sl/snxjt9","slide":7,"title":"IMPLEMENTED PRODUCT","textShapes":4}
+{"kind":"shape","id":"sh/qd4vmtwr","slide":7,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":7,"text":"IMPLEMENTED PRODUCT","textPreview":"IMPLEMENTED PRODUCT","textChars":19,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":7,"text":"07 / 15","textPreview":"07 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":7,"name":"slide-7-title","text":"Today, AccessPilot turns a target into a review-ready repair.","textPreview":"Today, AccessPilot turns a target into a review-ready repair.","textChars":61,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":7,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/xczed8v6","slide":7,"bbox":[104,110,1072,605]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":7,"text":"LIVE RUN · DETERMINISTIC MODE","textPreview":"LIVE RUN · DETERMINISTIC MODE","textChars":29,"textLines":1,"bbox":[888,126,260,32]}
+{"kind":"image","id":"im/1kre1w7m","slide":7,"name":"","geometry":"roundRect","alt":"AccessPilot dark review workspace showing human approval and 17 findings repaired to zero","bbox":[106,112,1068,601]}
+{"kind":"notes","id":"nt/snxjt9","slide":7,"text":""}
+{"kind":"slide","id":"sl/4ccmb4","slide":8,"title":"ADK WORKFLOW","textShapes":26}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":8,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":8,"text":"ADK WORKFLOW","textPreview":"ADK WORKFLOW","textChars":12,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":8,"text":"08 / 15","textPreview":"08 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":8,"name":"slide-8-title","text":"One bounded workflow carries evidence all the way down.","textPreview":"One bounded workflow carries evidence all the way down.","textChars":55,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/7adsji5s","slide":8,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/wval87ed","slide":8,"bbox":[52,154,274,372]}
+{"kind":"shape","id":"sh/pg3ex0nu","slide":8,"bbox":[74,178,52,0]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":8,"text":"EVIDENCE","textPreview":"EVIDENCE","textChars":8,"textLines":1,"bbox":[74,192,220,30]}
+{"kind":"shape","id":"sh/36hcrmhk","slide":8,"bbox":[76,258,8,8]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":8,"text":"Validate + isolate","textPreview":"Validate + isolate","textChars":18,"textLines":1,"bbox":[96,250,204,34]}
+{"kind":"shape","id":"sh/qxs72x4n","slide":8,"bbox":[76,321,8,8]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":8,"text":"Connect or launch","textPreview":"Connect or launch","textChars":17,"textLines":1,"bbox":[96,313,204,34]}
+{"kind":"shape","id":"sh/83itgfml","slide":8,"bbox":[76,384,8,8]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":8,"text":"Discover routes","textPreview":"Discover routes","textChars":15,"textLines":1,"bbox":[96,376,204,34]}
+{"kind":"shape","id":"sh/m94fu18j","slide":8,"bbox":[76,447,8,8]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":8,"text":"Render + scan","textPreview":"Render + scan","textChars":13,"textLines":1,"bbox":[96,439,204,34]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":8,"bbox":[352,154,274,372]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":8,"bbox":[374,178,52,0]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":8,"text":"REASON","textPreview":"REASON","textChars":6,"textLines":1,"bbox":[374,192,220,30]}
+{"kind":"shape","id":"sh/upwb2hwf","slide":8,"bbox":[376,258,8,8]}
+{"kind":"textbox","id":"sh/nap4r65w","slide":8,"text":"Normalize + audit","textPreview":"Normalize + audit","textChars":17,"textLines":1,"bbox":[396,250,204,34]}
+{"kind":"shape","id":"sh/cvixczed","slide":8,"bbox":[376,321,8,8]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":8,"text":"Map + investigate","textPreview":"Map + investigate","textChars":17,"textLines":1,"bbox":[396,313,204,34]}
+{"kind":"shape","id":"sh/udg7adsj","slide":8,"bbox":[376,384,8,8]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":8,"text":"Group + plan","textPreview":"Group + plan","textChars":12,"textLines":1,"bbox":[396,376,204,34]}
+{"kind":"shape","id":"sh/cj6tovah","slide":8,"bbox":[652,154,274,372]}
+{"kind":"shape","id":"sh/54zidony","slide":8,"bbox":[674,178,52,0]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":8,"text":"CHANGE","textPreview":"CHANGE","textChars":6,"textLines":1,"bbox":[674,192,220,30]}
+{"kind":"shape","id":"sh/judg7ads","slide":8,"bbox":[676,258,8,8]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":8,"text":"Propose","textPreview":"Propose","textChars":7,"textLines":1,"bbox":[696,250,204,34]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":8,"bbox":[676,321,8,8]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":8,"text":"Policy-check","textPreview":"Policy-check","textChars":12,"textLines":1,"bbox":[696,313,204,34]}
+{"kind":"shape","id":"sh/25kb6xkf","slide":8,"bbox":[676,384,8,8]}
+{"kind":"textbox","id":"sh/9knih4by","slide":8,"text":"Patch","textPreview":"Patch","textChars":5,"textLines":1,"bbox":[696,376,204,34]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":8,"bbox":[676,447,8,8]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":8,"text":"Re-scan + checks","textPreview":"Re-scan + checks","textChars":16,"textLines":1,"bbox":[696,439,204,34]}
+{"kind":"shape","id":"sh/2t83itgf","slide":8,"bbox":[952,154,274,372]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":8,"bbox":[974,178,52,0]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":8,"text":"GOVERN","textPreview":"GOVERN","textChars":6,"textLines":1,"bbox":[974,192,220,30]}
+{"kind":"shape","id":"sh/onyd0z61","slide":8,"bbox":[976,258,8,8]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":8,"text":"Compare","textPreview":"Compare","textChars":7,"textLines":1,"bbox":[996,250,204,34]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":8,"bbox":[976,321,8,8]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":8,"text":"Preview","textPreview":"Preview","textChars":7,"textLines":1,"bbox":[996,313,204,34]}
+{"kind":"shape","id":"sh/ovahoza1","slide":8,"bbox":[976,384,8,8]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":8,"text":"Human gate","textPreview":"Human gate","textChars":10,"textLines":1,"bbox":[996,376,204,34]}
+{"kind":"shape","id":"sh/6tovahoz","slide":8,"bbox":[976,447,8,8]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":8,"text":"Report / publish","textPreview":"Report / publish","textChars":16,"textLines":1,"bbox":[996,439,204,34]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":8,"bbox":[326,340,26,0]}
+{"kind":"shape","id":"sh/dsji5sne","slide":8,"bbox":[626,340,26,0]}
+{"kind":"shape","id":"sh/3q5o7qpg","slide":8,"bbox":[926,340,26,0]}
+{"kind":"shape","id":"sh/e9cvixcz","slide":8,"bbox":[489,526,300,0]}
+{"kind":"shape","id":"sh/lwval87e","slide":8,"bbox":[789,526,300,0]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":8,"text":"repair again","textPreview":"repair again","textChars":12,"textLines":1,"bbox":[650,540,130,22]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":8,"text":"revise","textPreview":"revise","textChars":6,"textLines":1,"bbox":[970,540,100,22]}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":8,"bbox":[78,584,1124,62]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":8,"text":"No source → report only     ·     No progress or repeated fingerprint → stop     ·     Revision → one bounded repair round","textPreview":"No source → report only     ·     No progress or repeated fingerprint → stop     ·     Revision → one bounded repair round","textChars":122,"textLines":1,"bbox":[104,603,1072,26]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":8,"text":"Deterministic evidence controls every transition; the graph never loops indefinitely.","textPreview":"Deterministic evidence controls every transition; the graph never loops indefinitely.","textChars":85,"textLines":1,"bbox":[52,688,1176,18]}
+{"kind":"notes","id":"nt/4ccmb4","slide":8,"text":""}
+{"kind":"slide","id":"sl/3gakyt","slide":9,"title":"AUTHORITY BOUNDARIES","textShapes":23}
+{"kind":"shape","id":"sh/fa9w3m94","slide":9,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":9,"text":"AUTHORITY BOUNDARIES","textPreview":"AUTHORITY BOUNDARIES","textChars":20,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":9,"text":"09 / 15","textPreview":"09 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":9,"name":"slide-9-title","text":"The LLM advises. Deterministic services decide what can happen.","textPreview":"The LLM advises. Deterministic services decide what can happen.","textChars":63,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/fyxobm58","slide":9,"bbox":[52,106,1176,0]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":9,"text":"ONE RUN CHOOSES ONE MODE","textPreview":"ONE RUN CHOOSES ONE MODE","textChars":24,"textLines":1,"bbox":[500,126,280,32]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":9,"text":"DETERMINISTIC","textPreview":"DETERMINISTIC","textChars":13,"textLines":1,"bbox":[364,172,170,30]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":9,"text":"GEMINI","textPreview":"GEMINI","textChars":6,"textLines":1,"bbox":[555,172,130,30]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":9,"text":"OPENAI VIA LLMPROXY","textPreview":"OPENAI VIA LLMPROXY","textChars":19,"textLines":1,"bbox":[706,172,214,30]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":9,"bbox":[640,226,0,354]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":9,"text":"LLM JUDGMENT","textPreview":"LLM JUDGMENT","textChars":12,"textLines":1,"bbox":[70,232,500,30]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":9,"text":"DETERMINISTIC CONTROL","textPreview":"DETERMINISTIC CONTROL","textChars":21,"textLines":1,"bbox":[708,232,500,30]}
+{"kind":"shape","id":"sh/8bat47y1","slide":9,"bbox":[72,290,7,7]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":9,"text":"Explain user impact","textPreview":"Explain user impact","textChars":19,"textLines":1,"bbox":[92,282,480,46]}
+{"kind":"shape","id":"sh/qh0fepkz","slide":9,"bbox":[72,338,7,7]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":9,"text":"Rank source candidates","textPreview":"Rank source candidates","textChars":22,"textLines":1,"bbox":[92,330,480,46]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":9,"bbox":[72,386,7,7]}
+{"kind":"textbox","id":"sh/j6tovaho","slide":9,"text":"Group and order repairs","textPreview":"Group and order repairs","textChars":23,"textLines":1,"bbox":[92,378,480,46]}
+{"kind":"shape","id":"sh/ulwval87","slide":9,"bbox":[72,434,7,7]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":9,"text":"Propose a bounded diff","textPreview":"Propose a bounded diff","textChars":22,"textLines":1,"bbox":[92,426,480,46]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":9,"bbox":[72,482,7,7]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":9,"text":"Interpret verification evidence","textPreview":"Interpret verification evidence","textChars":31,"textLines":1,"bbox":[92,474,480,46]}
+{"kind":"shape","id":"sh/p4r65wju","slide":9,"bbox":[72,530,7,7]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":9,"text":"Draft review text","textPreview":"Draft review text","textChars":17,"textLines":1,"bbox":[92,522,480,46]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":9,"bbox":[710,290,7,7]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":9,"text":"Browser scan + screenshots","textPreview":"Browser scan + screenshots","textChars":26,"textLines":1,"bbox":[730,282,480,46]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":9,"bbox":[710,338,7,7]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":9,"text":"Filesystem, process, and Git","textPreview":"Filesystem, process, and Git","textChars":28,"textLines":1,"bbox":[730,330,480,46]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":9,"bbox":[710,386,7,7]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":9,"text":"Path + diff validation","textPreview":"Path + diff validation","textChars":22,"textLines":1,"bbox":[730,378,480,46]}
+{"kind":"shape","id":"sh/4zidonyd","slide":9,"bbox":[710,434,7,7]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":9,"text":"Patch application","textPreview":"Patch application","textChars":17,"textLines":1,"bbox":[730,426,480,46]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":9,"bbox":[710,482,7,7]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":9,"text":"Fixed / remaining / regression counts","textPreview":"Fixed / remaining / regression counts","textChars":37,"textLines":1,"bbox":[730,474,480,46]}
+{"kind":"shape","id":"sh/4r65wjud","slide":9,"bbox":[710,530,7,7]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":9,"text":"Approval + remote mutation gates","textPreview":"Approval + remote mutation gates","textChars":32,"textLines":1,"bbox":[730,522,480,46]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":9,"bbox":[168,600,944,54]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":9,"text":"Deterministic mode replaces model specialists with typed local logic—zero model calls.","textPreview":"Deterministic mode replaces model specialists with typed local logic—zero model calls.","textChars":86,"textLines":1,"bbox":[194,616,892,26]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":9,"text":"AccessPilot · Google/Kaggle competition overview","textPreview":"AccessPilot · Google/Kaggle competition overview","textChars":48,"textLines":1,"bbox":[52,688,1176,18]}
+{"kind":"notes","id":"nt/3gakyt","slide":9,"text":""}
+{"kind":"slide","id":"sl/77w5sb","slide":10,"title":"DEMO PROOF","textShapes":16}
+{"kind":"shape","id":"sh/judg7ads","slide":10,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":10,"text":"DEMO PROOF","textPreview":"DEMO PROOF","textChars":10,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/1032lszq","slide":10,"text":"10 / 15","textPreview":"10 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":10,"name":"slide-10-title","text":"The bundled demo moved 17 findings to 0—under the configured checks.","textPreview":"The bundled demo moved 17 findings to 0—under the configured checks.","textChars":68,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/jm1cfa9w","slide":10,"bbox":[52,106,1176,0]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":10,"text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[60,114,70,42]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":10,"text":"baseline","textPreview":"baseline","textChars":8,"textLines":1,"bbox":[126,121,150,28]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":10,"text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[298,114,70,42]}
+{"kind":"textbox","id":"sh/nap4r65w","slide":10,"text":"fixed","textPreview":"fixed","textChars":5,"textLines":1,"bbox":[364,121,150,28]}
+{"kind":"textbox","id":"sh/7u54zido","slide":10,"text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[536,114,70,42]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":10,"text":"remaining","textPreview":"remaining","textChars":9,"textLines":1,"bbox":[602,121,150,28]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":10,"text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[774,114,70,42]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":10,"text":"new","textPreview":"new","textChars":3,"textLines":1,"bbox":[840,121,150,28]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":10,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1012,114,70,42]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":10,"text":"files changed","textPreview":"files changed","textChars":13,"textLines":1,"bbox":[1078,121,150,28]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":10,"text":"BEFORE","textPreview":"BEFORE","textChars":6,"textLines":1,"bbox":[54,166,118,28]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":10,"text":"AFTER","textPreview":"AFTER","textChars":5,"textLines":1,"bbox":[646,166,118,28]}
+{"kind":"shape","id":"sh/7adsji5s","slide":10,"bbox":[52,202,584,252]}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":10,"bbox":[644,202,584,252]}
+{"kind":"shape","id":"sh/47y1kre1","slide":10,"bbox":[52,472,584,184]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":10,"bbox":[644,472,584,184]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":10,"text":"Bundled sample · deterministic WCAG AA run · 6 Jul 2026 · Zero automated findings is not proof of full WCAG conformance.","textPreview":"Bundled sample · deterministic WCAG AA run · 6 Jul 2026 · Zero automated findings is not proof of full WCAG conformance.","textChars":120,"textLines":1,"bbox":[54,661,1172,20]}
+{"kind":"image","id":"im/pkzupwb2","slide":10,"name":"","geometry":"roundRect","alt":"Before repair: low contrast navigation, copy and call-to-action with an unlabeled project field","bbox":[54,204,580,248]}
+{"kind":"image","id":"im/k3q5o7qp","slide":10,"name":"","geometry":"roundRect","alt":"After repair: readable navigation, copy and call-to-action with a visible Project name label","bbox":[646,204,580,248]}
+{"kind":"image","id":"im/2x4nap4r","slide":10,"name":"","geometry":"roundRect","alt":"Before repair: account form without a visible Email label","bbox":[54,474,580,180]}
+{"kind":"image","id":"im/kre1w7mp","slide":10,"name":"","geometry":"roundRect","alt":"After repair: account form with visible Email label and improved button contrast","bbox":[646,474,580,180]}
+{"kind":"notes","id":"nt/77w5sb","slide":10,"text":""}
+{"kind":"slide","id":"sl/yny6n9","slide":11,"title":"SYSTEM ARCHITECTURE","textShapes":20}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":11,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/ulwval87","slide":11,"text":"SYSTEM ARCHITECTURE","textPreview":"SYSTEM ARCHITECTURE","textChars":19,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/j6tovaho","slide":11,"text":"11 / 15","textPreview":"11 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":11,"name":"slide-11-title","text":"Architecture separates evidence, judgment, side effects, and approval.","textPreview":"Architecture separates evidence, judgment, side effects, and approval.","textChars":70,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":11,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":11,"bbox":[54,126,1172,62]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":11,"text":"EXPERIENCE","textPreview":"EXPERIENCE","textChars":10,"textLines":1,"bbox":[76,142,132,22]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":11,"text":"Human reviewer  ⇄  React / Vite review UI","textPreview":"Human reviewer  ⇄  React / Vite review UI","textChars":41,"textLines":1,"bbox":[238,139,760,28]}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":11,"bbox":[54,204,1172,62]}
+{"kind":"textbox","id":"sh/d0z61032","slide":11,"text":"SERVING","textPreview":"SERVING","textChars":7,"textLines":1,"bbox":[76,220,132,22]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":11,"text":"FastAPI REST/UI server  ⇄  RunManager + resumable sessions","textPreview":"FastAPI REST/UI server  ⇄  RunManager + resumable sessions","textChars":58,"textLines":1,"bbox":[238,217,760,28]}
+{"kind":"shape","id":"sh/vu9knih4","slide":11,"bbox":[54,282,1172,86]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":11,"text":"GOOGLE ADK 2","textPreview":"GOOGLE ADK 2","textChars":12,"textLines":1,"bbox":[76,302,180,24]}
+{"kind":"textbox","id":"sh/d8bat47y","slide":11,"text":"Typed workflow graph","textPreview":"Typed workflow graph","textChars":20,"textLines":1,"bbox":[272,296,362,30]}
+{"kind":"textbox","id":"sh/knih4byh","slide":11,"text":"Conditional routes · bounded retries · RequestInput gate","textPreview":"Conditional routes · bounded retries · RequestInput gate","textChars":56,"textLines":1,"bbox":[272,329,704,25]}
+{"kind":"shape","id":"sh/v6psfil0","slide":11,"bbox":[54,388,510,126]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":11,"text":"REASONING SPECIALISTS","textPreview":"REASONING SPECIALISTS","textChars":21,"textLines":1,"bbox":[78,408,280,24]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":11,"text":"Six single-turn, tool-free agents","textPreview":"Six single-turn, tool-free agents","textChars":33,"textLines":1,"bbox":[78,444,420,28]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":11,"text":"Gemini via native ADK  OR  OpenAI via enterprise proxy\nDeterministic typed fallback when no LLM is selected","textPreview":"Gemini via native ADK  OR  OpenAI via enterprise proxy | Deterministic typed fallback when no LLM is selected","textChars":107,"textLines":2,"bbox":[78,478,442,46]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":11,"bbox":[586,388,640,126]}
+{"kind":"textbox","id":"sh/9knih4by","slide":11,"text":"DETERMINISTIC POLICY SERVICES","textPreview":"DETERMINISTIC POLICY SERVICES","textChars":29,"textLines":1,"bbox":[610,408,360,24]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":11,"text":"Workspace · runner · routes · mapping · patch validation","textPreview":"Workspace · runner · routes · mapping · patch validation","textChars":56,"textLines":1,"bbox":[610,444,560,28]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":11,"text":"Verification · preview · process control · Git / GitHub","textPreview":"Verification · preview · process control · Git / GitHub","textChars":55,"textLines":1,"bbox":[610,482,560,26]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":11,"bbox":[54,534,1172,88]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":11,"text":"EXECUTION + ARTIFACTS","textPreview":"EXECUTION + ARTIFACTS","textChars":21,"textLines":1,"bbox":[76,552,210,24]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":11,"text":"Playwright Chromium + axe-core  ·  isolated working copies  ·  screenshots + diffs  ·  Git + GitHub CLI","textPreview":"Playwright Chromium + axe-core  ·  isolated working copies  ·  screenshots + diffs  ·  Git + GitHub CLI","textChars":103,"textLines":1,"bbox":[286,550,900,28]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":11,"text":"Current run/session state is in memory; workspaces and artifacts remain on disk.","textPreview":"Current run/session state is in memory; workspaces and artifacts remain on disk.","textChars":80,"textLines":1,"bbox":[286,585,900,22]}
+{"kind":"shape","id":"sh/kjm1cfa9","slide":11,"bbox":[640,188,0,16]}
+{"kind":"shape","id":"sh/94fu18jq","slide":11,"bbox":[640,266,0,16]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":11,"bbox":[309,368,331,20]}
+{"kind":"shape","id":"sh/q1orytsv","slide":11,"bbox":[640,368,266,20]}
+{"kind":"shape","id":"sh/xs72x4na","slide":11,"bbox":[640,514,266,20]}
+{"kind":"shape","id":"sh/87ed8bat","slide":11,"bbox":[362,640,556,38]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":11,"text":"Human approval binds the verified diff before any optional publication.","textPreview":"Human approval binds the verified diff before any optional publication.","textChars":71,"textLines":1,"bbox":[382,649,516,22]}
+{"kind":"notes","id":"nt/yny6n9","slide":11,"text":""}
+{"kind":"slide","id":"sl/cch9s0","slide":12,"title":"SPECIALIST AGENTS","textShapes":30}
+{"kind":"shape","id":"sh/47y1kre1","slide":12,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":12,"text":"SPECIALIST AGENTS","textPreview":"SPECIALIST AGENTS","textChars":17,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":12,"text":"12 / 15","textPreview":"12 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":12,"name":"slide-12-title","text":"Six specialists make one auditable decision chain.","textPreview":"Six specialists make one auditable decision chain.","textChars":50,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":12,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/bat47y1k","slide":12,"bbox":[54,134,366,186]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":12,"bbox":[76,154,48,48]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":12,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[76,165,48,24]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":12,"text":"Accessibility Auditor","textPreview":"Accessibility Auditor","textChars":21,"textLines":1,"bbox":[138,154,252,52]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":12,"text":"Explain user impact","textPreview":"Explain user impact","textChars":19,"textLines":1,"bbox":[76,218,316,28]}
+{"kind":"textbox","id":"sh/judg7ads","slide":12,"text":"Normalized evidence → explanations + fix strategy","textPreview":"Normalized evidence → explanations + fix strategy","textChars":49,"textLines":1,"bbox":[76,254,316,52]}
+{"kind":"shape","id":"sh/cfa9w3m9","slide":12,"bbox":[448,134,366,186]}
+{"kind":"shape","id":"sh/1032lszq","slide":12,"bbox":[470,154,48,48]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":12,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[470,165,48,24]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":12,"text":"Codebase Investigator","textPreview":"Codebase Investigator","textChars":21,"textLines":1,"bbox":[532,154,252,52]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":12,"text":"Rank source candidates","textPreview":"Rank source candidates","textChars":22,"textLines":1,"bbox":[470,218,316,28]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":12,"text":"DOM + repository evidence → likely files + confidence","textPreview":"DOM + repository evidence → likely files + confidence","textChars":53,"textLines":1,"bbox":[470,254,316,52]}
+{"kind":"shape","id":"sh/upwb2hwf","slide":12,"bbox":[842,134,366,186]}
+{"kind":"shape","id":"sh/nap4r65w","slide":12,"bbox":[864,154,48,48]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":12,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[864,165,48,24]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":12,"text":"Repair Planner","textPreview":"Repair Planner","textChars":14,"textLines":1,"bbox":[926,154,252,52]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":12,"text":"Group and sequence fixes","textPreview":"Group and sequence fixes","textChars":24,"textLines":1,"bbox":[864,218,316,28]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":12,"text":"Issues + mappings → ordered repair groups + risk","textPreview":"Issues + mappings → ordered repair groups + risk","textChars":48,"textLines":1,"bbox":[864,254,316,52]}
+{"kind":"shape","id":"sh/fepkzupw","slide":12,"bbox":[54,356,366,186]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":12,"bbox":[76,376,48,48]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":12,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[76,387,48,24]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":12,"text":"Code Repairer","textPreview":"Code Repairer","textChars":13,"textLines":1,"bbox":[138,376,252,52]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":12,"text":"Propose bounded diffs","textPreview":"Propose bounded diffs","textChars":21,"textLines":1,"bbox":[76,440,316,28]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":12,"text":"Approved plan + source excerpts → unified diff proposals","textPreview":"Approved plan + source excerpts → unified diff proposals","textChars":56,"textLines":1,"bbox":[76,476,316,52]}
+{"kind":"shape","id":"sh/0z61032l","slide":12,"bbox":[448,356,366,186]}
+{"kind":"shape","id":"sh/pkzupwb2","slide":12,"bbox":[470,376,48,48]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":12,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[470,387,48,24]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":12,"text":"Verification Specialist","textPreview":"Verification Specialist","textChars":23,"textLines":1,"bbox":[532,376,252,52]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":12,"text":"Assess before vs. after","textPreview":"Assess before vs. after","textChars":23,"textLines":1,"bbox":[470,440,316,28]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":12,"text":"Re-scan + checks + diff → pass / retry / stop","textPreview":"Re-scan + checks + diff → pass / retry / stop","textChars":45,"textLines":1,"bbox":[470,476,316,52]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":12,"bbox":[842,356,366,186]}
+{"kind":"shape","id":"sh/72x4nap4","slide":12,"bbox":[864,376,48,48]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":12,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[864,387,48,24]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":12,"text":"PR Writer","textPreview":"PR Writer","textChars":9,"textLines":1,"bbox":[926,376,252,52]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":12,"text":"Draft review metadata","textPreview":"Draft review metadata","textChars":21,"textLines":1,"bbox":[864,440,316,28]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":12,"text":"Verified changes → title, body, tests + limitations","textPreview":"Verified changes → title, body, tests + limitations","textChars":51,"textLines":1,"bbox":[864,476,316,52]}
+{"kind":"shape","id":"sh/j6tovaho","slide":12,"bbox":[420,227,28,0]}
+{"kind":"shape","id":"sh/ulwval87","slide":12,"bbox":[814,227,28,0]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":12,"bbox":[237,320,788,36]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":12,"bbox":[420,449,28,0]}
+{"kind":"shape","id":"sh/ji5snelo","slide":12,"bbox":[814,449,28,0]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":12,"bbox":[224,598,832,60]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":12,"text":"Single-turn · tool-free · strict typed outputs","textPreview":"Single-turn · tool-free · strict typed outputs","textChars":46,"textLines":1,"bbox":[252,610,776,24]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":12,"text":"Agents provide judgment. Deterministic services perform every browser, file, process, and Git action.","textPreview":"Agents provide judgment. Deterministic services perform every browser, file, process, and Git action.","textChars":101,"textLines":1,"bbox":[252,636,776,18]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":12,"text":"AccessPilot · Google/Kaggle competition overview","textPreview":"AccessPilot · Google/Kaggle competition overview","textChars":48,"textLines":1,"bbox":[52,688,1176,18]}
+{"kind":"notes","id":"nt/cch9s0","slide":12,"text":""}
+{"kind":"slide","id":"sl/b8vgt7","slide":13,"title":"SAFETY MODEL","textShapes":19}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":13,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":13,"text":"SAFETY MODEL","textPreview":"SAFETY MODEL","textChars":12,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":13,"text":"13 / 15","textPreview":"13 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":13,"name":"slide-13-title","text":"Safety is enforced outside the model.","textPreview":"Safety is enforced outside the model.","textChars":37,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":13,"bbox":[52,106,1176,0]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":13,"text":"BEFORE THE GATE","textPreview":"BEFORE THE GATE","textChars":15,"textLines":1,"bbox":[72,136,430,26]}
+{"kind":"shape","id":"sh/4zidonyd","slide":13,"bbox":[74,194,7,7]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":13,"text":"Copy or clone—never edit supplied source in place","textPreview":"Copy or clone—never edit supplied source in place","textChars":49,"textLines":1,"bbox":[94,186,410,64]}
+{"kind":"shape","id":"sh/qxs72x4n","slide":13,"bbox":[74,282,7,7]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":13,"text":"Allow-listed argv, timeouts, and secret-stripped environment","textPreview":"Allow-listed argv, timeouts, and secret-stripped environment","textChars":60,"textLines":1,"bbox":[94,274,410,64]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":13,"bbox":[74,370,7,7]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":13,"text":"Regular files only; symlinks and sensitive paths blocked","textPreview":"Regular files only; symlinks and sensitive paths blocked","textChars":56,"textLines":1,"bbox":[94,362,410,64]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":13,"bbox":[74,458,7,7]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":13,"text":"Plan-owned diffs must pass git apply --check","textPreview":"Plan-owned diffs must pass git apply --check","textChars":44,"textLines":1,"bbox":[94,450,410,64]}
+{"kind":"shape","id":"sh/p4r65wju","slide":13,"bbox":[526,148,228,420]}
+{"kind":"shape","id":"sh/ed8v6psf","slide":13,"bbox":[590,210,100,100]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":13,"text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[590,224,100,60]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":13,"text":"HUMAN\nAPPROVAL","textPreview":"HUMAN | APPROVAL","textChars":14,"textLines":2,"bbox":[554,334,172,72]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":13,"text":"Bound to the verified diff, verification fingerprint, PR metadata, and Git HEAD.","textPreview":"Bound to the verified diff, verification fingerprint, PR metadata, and Git HEAD.","textChars":80,"textLines":1,"bbox":[550,438,180,90]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":13,"text":"AFTER THE GATE","textPreview":"AFTER THE GATE","textChars":14,"textLines":1,"bbox":[798,136,410,26]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":13,"bbox":[800,194,7,7]}
+{"kind":"textbox","id":"sh/val87ed8","slide":13,"text":"Scanner evidence—not model confidence—decides what is fixed","textPreview":"Scanner evidence—not model confidence—decides what is fixed","textChars":59,"textLines":1,"bbox":[820,186,384,64]}
+{"kind":"shape","id":"sh/6psfil0r","slide":13,"bbox":[800,282,7,7]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":13,"text":"Repeated states and round limits stop autonomous loops","textPreview":"Repeated states and round limits stop autonomous loops","textChars":54,"textLines":1,"bbox":[820,274,384,64]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":13,"bbox":[800,370,7,7]}
+{"kind":"textbox","id":"sh/vixczed8","slide":13,"text":"Remote publication stays disabled by default","textPreview":"Remote publication stays disabled by default","textChars":44,"textLines":1,"bbox":[820,362,384,64]}
+{"kind":"shape","id":"sh/2x4nap4r","slide":13,"bbox":[800,458,7,7]}
+{"kind":"textbox","id":"sh/d0z61032","slide":13,"text":"Live files, index, origin, and commit are revalidated","textPreview":"Live files, index, origin, and commit are revalidated","textChars":53,"textLines":1,"bbox":[820,450,384,64]}
+{"kind":"shape","id":"sh/kf6dcbul","slide":13,"bbox":[164,602,952,60]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":13,"text":"46 unit + integration tests passed  ·  2 / 2 narrow local eval cases passed","textPreview":"46 unit + integration tests passed  ·  2 / 2 narrow local eval cases passed","textChars":75,"textLines":1,"bbox":[192,614,896,26]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":13,"text":"Workspace isolation is not an OS sandbox; production requires per-run containers or microVMs.","textPreview":"Workspace isolation is not an OS sandbox; production requires per-run containers or microVMs.","textChars":93,"textLines":1,"bbox":[192,640,896,17]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":13,"text":"AccessPilot · Google/Kaggle competition overview","textPreview":"AccessPilot · Google/Kaggle competition overview","textChars":48,"textLines":1,"bbox":[52,688,1176,18]}
+{"kind":"notes","id":"nt/b8vgt7","slide":13,"text":""}
+{"kind":"slide","id":"sl/iyac6m","slide":14,"title":"DEVELOPMENT STORY","textShapes":20}
+{"kind":"shape","id":"sh/nqxs72x4","slide":14,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/cbulwval","slide":14,"text":"DEVELOPMENT STORY","textPreview":"DEVELOPMENT STORY","textChars":17,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":14,"text":"14 / 15","textPreview":"14 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":14,"name":"slide-14-title","text":"Vibe-coded in Antigravity. Verified in the browser.","textPreview":"Vibe-coded in Antigravity. Verified in the browser.","textChars":51,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/neloj2t8","slide":14,"bbox":[52,106,1176,0]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":14,"text":"100%","textPreview":"100%","textChars":4,"textLines":1,"bbox":[64,142,284,112]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":14,"text":"human-directed\nvibe coding","textPreview":"human-directed | vibe coding","textChars":26,"textLines":2,"bbox":[72,254,280,80]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":14,"text":"Google Antigravity was the development environment. Google ADK is the application runtime framework.","textPreview":"Google Antigravity was the development environment. Google ADK is the application runtime framework.","textChars":100,"textLines":1,"bbox":[72,364,312,96]}
+{"kind":"shape","id":"sh/n29gr2p8","slide":14,"bbox":[420,132,0,452]}
+{"kind":"shape","id":"sh/fyxobm58","slide":14,"bbox":[468,152,208,132]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":14,"text":"Intent","textPreview":"Intent","textChars":6,"textLines":1,"bbox":[488,172,168,30]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":14,"text":"Natural-language outcome","textPreview":"Natural-language outcome","textChars":24,"textLines":1,"bbox":[488,214,168,44]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":14,"bbox":[710,152,208,132]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":14,"text":"Plan","textPreview":"Plan","textChars":4,"textLines":1,"bbox":[730,172,168,30]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":14,"text":"Tasks + artifacts","textPreview":"Tasks + artifacts","textChars":17,"textLines":1,"bbox":[730,214,168,44]}
+{"kind":"shape","id":"sh/xczed8v6","slide":14,"bbox":[952,152,208,132]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":14,"text":"Build","textPreview":"Build","textChars":5,"textLines":1,"bbox":[972,172,168,30]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":14,"text":"Editor + terminal","textPreview":"Editor + terminal","textChars":17,"textLines":1,"bbox":[972,214,168,44]}
+{"kind":"shape","id":"sh/qtcj6tov","slide":14,"bbox":[468,348,208,132]}
+{"kind":"textbox","id":"sh/u54zidon","slide":14,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[488,368,168,30]}
+{"kind":"textbox","id":"sh/nqxs72x4","slide":14,"text":"Tests + browser","textPreview":"Tests + browser","textChars":15,"textLines":1,"bbox":[488,410,168,44]}
+{"kind":"shape","id":"sh/cbulwval","slide":14,"bbox":[710,348,208,132]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":14,"text":"Review","textPreview":"Review","textChars":6,"textLines":1,"bbox":[730,368,168,30]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":14,"text":"Diffs + screenshots","textPreview":"Diffs + screenshots","textChars":19,"textLines":1,"bbox":[730,410,168,44]}
+{"kind":"shape","id":"sh/neloj2t8","slide":14,"bbox":[952,348,208,132]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":14,"text":"Iterate","textPreview":"Iterate","textChars":7,"textLines":1,"bbox":[972,368,168,30]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":14,"text":"Human feedback","textPreview":"Human feedback","textChars":14,"textLines":1,"bbox":[972,410,168,44]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":14,"bbox":[676,218,34,0]}
+{"kind":"shape","id":"sh/n29gr2p8","slide":14,"bbox":[918,218,34,0]}
+{"kind":"shape","id":"sh/d8bat47y","slide":14,"bbox":[572,284,484,64]}
+{"kind":"shape","id":"sh/knih4byh","slide":14,"bbox":[676,414,34,0]}
+{"kind":"shape","id":"sh/v6psfil0","slide":14,"bbox":[918,414,34,0]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":14,"bbox":[572,284,484,220]}
+{"kind":"shape","id":"sh/d0z61032","slide":14,"bbox":[520,566,642,56]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":14,"text":"Fast iteration without giving up evidence or review.","textPreview":"Fast iteration without giving up evidence or review.","textChars":52,"textLines":1,"bbox":[544,580,594,26]}
+{"kind":"shape","id":"sh/vu9knih4","slide":14,"bbox":[52,681,1176,0]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":14,"name":"source-note","text":"Build provenance: author-provided. Sources: Google Antigravity IDE; Google Developers Blog, 20 Nov 2025.","textPreview":"Build provenance: author-provided. Sources: Google Antigravity IDE; Google Developers Blog, 20 Nov 2025.","textChars":104,"textLines":1,"bbox":[52,687,1176,21]}
+{"kind":"notes","id":"nt/iyac6m","slide":14,"text":""}
+{"kind":"slide","id":"sl/azrp5w","slide":15,"title":"ROADMAP","textShapes":12}
+{"kind":"shape","id":"sh/90je9cvi","slide":15,"bbox":[52,28,32,0]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":15,"text":"ROADMAP","textPreview":"ROADMAP","textChars":7,"textLines":1,"bbox":[96,16,620,24]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":15,"text":"15 / 15","textPreview":"15 / 15","textChars":7,"textLines":1,"bbox":[1125,16,100,24]}
+{"kind":"textbox","id":"sh/g7adsji5","slide":15,"name":"slide-15-title","text":"The roadmap turns a local prototype into a learning accessibility platform.","textPreview":"The roadmap turns a local prototype into a learning accessibility platform.","textChars":75,"textLines":1,"bbox":[52,43,1176,54]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":15,"bbox":[52,106,1176,0]}
+{"kind":"shape","id":"sh/y1kre1w7","slide":15,"bbox":[62,170,352,260]}
+{"kind":"shape","id":"sh/rmhk3q5o","slide":15,"bbox":[86,198,58,0]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":15,"text":"HARDEN","textPreview":"HARDEN","textChars":6,"textLines":1,"bbox":[86,218,304,32]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":15,"text":"Durable runs\nArtifact storage\nPer-run container or microVM\nAuthenticated edge","textPreview":"Durable runs | Artifact storage | Per-run container or microVM | Authenticated edge","textChars":77,"textLines":4,"bbox":[86,266,304,148]}
+{"kind":"shape","id":"sh/5gbq1ory","slide":15,"bbox":[460,134,352,296]}
+{"kind":"shape","id":"sh/cvixczed","slide":15,"bbox":[484,162,58,0]}
+{"kind":"textbox","id":"sh/nap4r65w","slide":15,"text":"DEEPEN","textPreview":"DEEPEN","textChars":6,"textLines":1,"bbox":[484,182,304,32]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":15,"text":"Saved authenticated flows\nMFA handoff\nRicher keyboard + screen-reader checks\nBroader framework repairs","textPreview":"Saved authenticated flows | MFA handoff | Richer keyboard + screen-reader checks | Broader framework repairs","textChars":102,"textLines":4,"bbox":[484,230,304,184]}
+{"kind":"shape","id":"sh/54zidony","slide":15,"bbox":[858,98,352,332]}
+{"kind":"shape","id":"sh/cj6tovah","slide":15,"bbox":[882,126,58,0]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":15,"text":"SCALE + LEARN","textPreview":"SCALE + LEARN","textChars":13,"textLines":1,"bbox":[882,146,304,32]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":15,"text":"CI + GitHub App\nTeam dashboards\nDesign-token / Figma links\nLearn from accepted fixes + real users","textPreview":"CI + GitHub App | Team dashboards | Design-token / Figma links | Learn from accepted fixes + real users","textChars":97,"textLines":4,"bbox":[882,194,304,220]}
+{"kind":"shape","id":"sh/1032lszq","slide":15,"bbox":[414,282,46,18]}
+{"kind":"shape","id":"sh/cfa9w3m9","slide":15,"bbox":[812,264,46,18]}
+{"kind":"shape","id":"sh/obm58z25","slide":15,"bbox":[74,490,1132,152]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":15,"text":"AccessPilot compresses the distance between an exclusionary experience and a safe, human-reviewed fix.","textPreview":"AccessPilot compresses the distance between an exclusionary experience and a safe, human-reviewed fix.","textChars":102,"textLines":1,"bbox":[112,514,1056,58]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":15,"text":"It augments—not replaces—people with disabilities and accessibility experts.","textPreview":"It augments—not replaces—people with disabilities and accessibility experts.","textChars":76,"textLines":1,"bbox":[112,588,1056,30]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":15,"text":"Scan → trace → repair → verify → review","textPreview":"Scan → trace → repair → verify → review","textChars":39,"textLines":1,"bbox":[52,688,1176,18]}
+{"kind":"notes","id":"nt/azrp5w","slide":15,"text":""}
