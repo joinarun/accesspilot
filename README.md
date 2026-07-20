@@ -1,5 +1,7 @@
 # AccessPilot
 
+https://www.youtube.com/watch?v=khPh1yecPDA
+
 AccessPilot is an autonomous accessibility repair agent for web applications. It renders routes with Playwright, scans them with axe-core, maps findings to an isolated source copy, plans and applies conservative repairs, re-scans the result, and pauses at a resumable human gate before any push or pull request.
 
 The application is implemented as a typed Google ADK 2 graph with conditional routes, transient retries, a bounded repair loop, six specialist LLM agents, deterministic safety guards, a FastAPI backend, and an accessible React review UI.
