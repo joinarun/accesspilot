@@ -1,10 +1,35 @@
 # AccessPilot
 
-https://www.youtube.com/watch?v=khPh1yecPDA
+[Watch the demo](https://www.youtube.com/watch?v=khPh1yecPDA) ·
+[Try the bundled example](#quick-start) ·
+[Architecture](docs/architecture.md) ·
+[Limitations](#limitations)
 
 AccessPilot is an autonomous accessibility repair agent for web applications. It renders routes with Playwright, scans them with axe-core, maps findings to an isolated source copy, plans and applies conservative repairs, re-scans the result, and pauses at a resumable human gate before any push or pull request.
 
 The application is implemented as a typed Google ADK 2 graph with conditional routes, transient retries, a bounded repair loop, six specialist LLM agents, deterministic safety guards, a FastAPI backend, and an accessible React review UI.
+
+## Why AccessPilot
+
+Accessibility reports tell developers what failed; turning those findings into
+reviewable source changes takes additional investigation and validation.
+AccessPilot connects those steps in one workflow: scan a rendered application,
+map findings to source, repair supported patterns in an isolated copy, and
+review the verified diff before publication.
+
+**Status:** local prototype with a bundled demonstration app. Automated checks
+and repairs cover a subset of accessibility work; human accessibility testing
+is still required. Framework detection covers more stacks than automatic
+repair, which is limited to conservative transformations. See the
+[known limitations](docs/limitations.md) for the exact boundaries.
+
+## Technology
+
+- **Orchestration and API:** Python, Google ADK 2, FastAPI, and typed data models.
+- **Scanning and validation:** Node.js, Playwright, and axe-core.
+- **Review interface:** React, TypeScript, and Vite.
+- **Model options:** deterministic specialists, Gemini, or an OpenAI-compatible
+  model through an enterprise proxy.
 
 ## What works
 
@@ -30,6 +55,9 @@ The application is implemented as a typed Google ADK 2 graph with conditional ro
 Requirements: Python 3.11–3.13, [uv](https://docs.astral.sh/uv/), Node.js 20+, npm, and `agents-cli` 1.0+.
 
 ```bash
+git clone https://github.com/joinarun/accesspilot.git
+cd accesspilot
+
 uv tool install google-agents-cli
 agents-cli install
 
